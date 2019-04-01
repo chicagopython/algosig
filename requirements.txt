@@ -1,0 +1,9 @@
+requests
+nikola
+jupyter
+ipython
+pandas
+numpy
+scikit-learn
+statsmodels
+ghp-import2

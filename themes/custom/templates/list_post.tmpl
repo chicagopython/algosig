@@ -1,0 +1,26 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.tmpl"/>
+<%namespace name="archive_nav" file="archive_navigation_helper.tmpl" import="*"/>
+<%namespace name="feeds_translations" file="feeds_translations_helper.tmpl" import="*"/>
+
+<%block name="content">
+<article>
+    <header>
+        <h1>${title|h}</h1>
+    </header>
+    ${archive_nav.archive_navigation()}
+    ${feeds_translations.translation_link()}
+    %if posts:
+    <ul class="postlist">
+    % for post in posts:
+        <li itemscope itemtype="https://schema.org/BlogPosting">
+          <div><time class="metadata" datetime="${post.formatted_date('webiso')}" itemprop="datePublished">${post.formatted_date(date_format)|h}</time></div>
+          <div><a href="${post.permalink()}" itemprop="url">${post.title()|h}</a></div>
+        </li>
+    % endfor
+    </ul>
+    %else:
+    <p>${messages("No posts found.")}</p>
+    %endif
+</article>
+</%block>

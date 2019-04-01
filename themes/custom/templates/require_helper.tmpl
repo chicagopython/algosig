@@ -1,0 +1,16 @@
+<%def name="require_script()">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js" async crossorigin="anonymous"></script>
+</%def>
+
+<%def name="require_script_ifpost(post)">
+  % if post.tags and 'require' in post.tags:
+    ${require_script()}
+  % endif
+</%def>
+
+
+<%def name="require_script_ifposts(post)">
+  % if any((post.tags and 'require' in post.tags) for post in posts):
+    ${require_script()}
+  % endif
+</%def>
