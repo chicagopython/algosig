@@ -16,12 +16,12 @@ Algo SIG is be a dedicated special interest group to discuss and practice all th
 
 Agenda:
 
-6:00pm: Doors Open 
-6:10pm: Introductions 
-6:15pm: Split into groups 
-6:30pm: Start solving problems 
-8:00pm: Reconvene & go over solutions 
-8:30pm: Close of the event 
+6:00pm: Doors Open  
+6:10pm: Introductions  
+6:15pm: Split into groups  
+6:30pm: Start solving problems  
+8:00pm: Reconvene & go over solutions  
+8:30pm: Close of the event  
 
 RSVP Required:
 
