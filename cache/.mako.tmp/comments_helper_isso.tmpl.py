@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1554091384.060859
+_modified_time = 1554091637.311722
 _enable_loop = True
 _template_filename = '/Users/t/projects/python/Chipy/algosig/venv/lib/python3.7/site-packages/nikola/data/themes/base/templates/comments_helper_isso.tmpl'
 _template_uri = 'comments_helper_isso.tmpl'
@@ -29,8 +29,8 @@ def render_body(context,**pageargs):
 def render_comment_form(context,url,title,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
-        isso_config = context.get('isso_config', UNDEFINED)
         comment_system_id = context.get('comment_system_id', UNDEFINED)
+        isso_config = context.get('isso_config', UNDEFINED)
         lang = context.get('lang', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')

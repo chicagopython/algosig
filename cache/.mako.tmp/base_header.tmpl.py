@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1554091383.8978162
+_modified_time = 1554091636.855732
 _enable_loop = True
 _template_filename = 'themes/custom/templates/base_header.tmpl'
 _template_uri = 'base_header.tmpl'
@@ -47,9 +47,9 @@ def render_html_header(context):
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
         def html_navigation_links():
             return render_html_navigation_links(context)
+        template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
         def html_translation_header():
             return render_html_translation_header(context)
-        template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
         search_form = _import_ns.get('search_form', context.get('search_form', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    <header id="header" class="hidden-print">\n        ')
@@ -74,10 +74,10 @@ def render_html_site_title(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
-        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
         _link = _import_ns.get('_link', context.get('_link', UNDEFINED))
         show_blog_title = _import_ns.get('show_blog_title', context.get('show_blog_title', UNDEFINED))
         logo_url = _import_ns.get('logo_url', context.get('logo_url', UNDEFINED))
+        blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
         abs_link = _import_ns.get('abs_link', context.get('abs_link', UNDEFINED))
         lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
         __M_writer = context.writer()
@@ -111,17 +111,17 @@ def render_html_navigation_links(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
-        tuple = _import_ns.get('tuple', context.get('tuple', UNDEFINED))
-        navigation_links = _import_ns.get('navigation_links', context.get('navigation_links', UNDEFINED))
-        show_blog_title = _import_ns.get('show_blog_title', context.get('show_blog_title', UNDEFINED))
-        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        isinstance = _import_ns.get('isinstance', context.get('isinstance', UNDEFINED))
         rel_link = _import_ns.get('rel_link', context.get('rel_link', UNDEFINED))
-        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
+        navigation_links = _import_ns.get('navigation_links', context.get('navigation_links', UNDEFINED))
         template_hooks = _import_ns.get('template_hooks', context.get('template_hooks', UNDEFINED))
+        show_blog_title = _import_ns.get('show_blog_title', context.get('show_blog_title', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
+        tuple = _import_ns.get('tuple', context.get('tuple', UNDEFINED))
         def html_site_title():
             return render_html_site_title(context)
-        isinstance = _import_ns.get('isinstance', context.get('isinstance', UNDEFINED))
+        lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    <nav id="menu">\n')
         if show_blog_title:
@@ -179,9 +179,9 @@ def render_html_translation_header(context):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'base')._populate(_import_ns, ['*'])
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        base = _mako_get_namespace(context, 'base')
         len = _import_ns.get('len', context.get('len', UNDEFINED))
+        base = _mako_get_namespace(context, 'base')
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         translations = _import_ns.get('translations', context.get('translations', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
