@@ -650,7 +650,7 @@ REDIRECTIONS = [("posts/index.html", "/index.html")]
 #
 # also, to use your own CNAME, `echo mycustomdomain.com > files/CNAME`
 GITHUB_SOURCE_BRANCH = 'src'
-GITHUB_DEPLOY_BRANCH = 'master'
+GITHUB_DEPLOY_BRANCH = 'gh-pages'
 
 # The name of the remote where you wish to push to, using github_deploy.
 GITHUB_REMOTE_NAME = 'origin'
