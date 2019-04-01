@@ -1,4 +1,4 @@
-Sitemap: https://algosig.github.io/sitemapindex.xml
+Sitemap: https://chicagopython.github.io/algosig/sitemapindex.xml
 
 User-Agent: *
-Host: algosig.github.io
+Host: chicagopython.github.io

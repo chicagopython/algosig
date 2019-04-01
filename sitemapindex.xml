@@ -6,23 +6,27 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://algosig.github.io/categories/array.xml</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/categories/array.xml</loc>
+  <lastmod>2019-04-01T03:58:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://algosig.github.io/categories/binary-search.xml</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/categories/binary-search.xml</loc>
+  <lastmod>2019-04-01T03:58:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://algosig.github.io/categories/cat_python-101.xml</loc>
-  <lastmod>2019-04-01T03:17:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_python-101.xml</loc>
+  <lastmod>2019-04-01T03:58:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://algosig.github.io/rss.xml</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/categories/string.xml</loc>
+  <lastmod>2019-04-01T03:58:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://algosig.github.io/sitemap.xml</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/rss.xml</loc>
+  <lastmod>2019-04-01T03:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://chicagopython.github.io/algosig/sitemap.xml</loc>
+  <lastmod>2019-04-01T03:58:00Z</lastmod>
  </sitemap>
 </sitemapindex>

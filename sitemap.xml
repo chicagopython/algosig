@@ -6,43 +6,51 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://algosig.github.io/</loc>
+  <loc>https://chicagopython.github.io/algosig/</loc>
   <lastmod>2019-04-01T03:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/about/</loc>
+  <loc>https://chicagopython.github.io/algosig/about/</loc>
   <lastmod>2019-04-01T03:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/archive.html</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/archive.html</loc>
+  <lastmod>2019-04-01T03:58:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/categories/</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/categories/</loc>
+  <lastmod>2019-04-01T03:49:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/categories/array/</loc>
+  <loc>https://chicagopython.github.io/algosig/categories/array/</loc>
   <lastmod>2019-04-01T03:17:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/categories/binary-search/</loc>
+  <loc>https://chicagopython.github.io/algosig/categories/binary-search/</loc>
   <lastmod>2019-04-01T03:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/categories/cat_python-101/</loc>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_python-101/</loc>
   <lastmod>2019-04-01T03:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/posts/</loc>
+  <loc>https://chicagopython.github.io/algosig/categories/string/</loc>
+  <lastmod>2019-04-01T03:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/posts/</loc>
+  <lastmod>2019-04-01T03:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/posts/first-bad-version/</loc>
   <lastmod>2019-04-01T03:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/posts/first-bad-version/</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/posts/longest-palindromic-substring/</loc>
+  <lastmod>2019-04-01T03:49:00Z</lastmod>
  </url>
  <url>
-  <loc>https://algosig.github.io/posts/remove-duplicates-from-an-array/</loc>
+  <loc>https://chicagopython.github.io/algosig/posts/remove-duplicates-from-an-array/</loc>
   <lastmod>2019-04-01T03:17:00Z</lastmod>
  </url>
 </urlset>
