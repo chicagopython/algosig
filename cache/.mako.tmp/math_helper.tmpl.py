@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1554089911.178139
+_modified_time = 1554091134.5374038
 _enable_loop = True
 _template_filename = 'themes/custom/templates/math_helper.tmpl'
 _template_uri = 'math_helper.tmpl'
@@ -32,8 +32,8 @@ def render_body(context,**pageargs):
 def render_math_scripts(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        katex_auto_render = context.get('katex_auto_render', UNDEFINED)
         mathjax_config = context.get('mathjax_config', UNDEFINED)
+        katex_auto_render = context.get('katex_auto_render', UNDEFINED)
         use_katex = context.get('use_katex', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
@@ -90,9 +90,9 @@ def render_math_scripts_ifpost(context,post):
 def render_math_scripts_ifposts(context,posts):
     __M_caller = context.caller_stack._push_frame()
     try:
-        any = context.get('any', UNDEFINED)
         def math_scripts():
             return render_math_scripts(context)
+        any = context.get('any', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if any(post.has_math for post in posts):
