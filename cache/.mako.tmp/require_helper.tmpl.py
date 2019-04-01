@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1554091134.5441668
+_modified_time = 1554091383.987328
 _enable_loop = True
 _template_filename = 'themes/custom/templates/require_helper.tmpl'
 _template_uri = 'require_helper.tmpl'
@@ -55,9 +55,9 @@ def render_require_script_ifpost(context,post):
 def render_require_script_ifposts(context,post):
     __M_caller = context.caller_stack._push_frame()
     try:
+        any = context.get('any', UNDEFINED)
         def require_script():
             return render_require_script(context)
-        any = context.get('any', UNDEFINED)
         posts = context.get('posts', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
