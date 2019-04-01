@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1554091637.1512341
+_modified_time = 1554091721.5495172
 _enable_loop = True
 _template_filename = 'themes/custom/templates/require_helper.tmpl'
 _template_uri = 'require_helper.tmpl'
@@ -57,8 +57,8 @@ def render_require_script_ifposts(context,post):
     try:
         def require_script():
             return render_require_script(context)
-        any = context.get('any', UNDEFINED)
         posts = context.get('posts', UNDEFINED)
+        any = context.get('any', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if any((post.tags and 'require' in post.tags) for post in posts):

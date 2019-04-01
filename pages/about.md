@@ -10,7 +10,7 @@
 .. type: text
 -->
 
-# Chicago Python User Group Algorithms Special Interest Group (AlgoSig)
+# Chipy Algorithms Special Interest Group (AlgoSig)
 
 Algo SIG is be a dedicated special interest group to discuss and practice all things algorithms. Having a solid understanding of algorithms and data structure is an important aspect of designing better software. That’s why many coding interviews, competitive programming require good grasp of algorithms. This SIG would be dedicated to hands on solving of such problems and discussions so that we can all get better at it together.
 
