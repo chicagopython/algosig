@@ -24,7 +24,7 @@ BLOG_TITLE = "AlgoSig"  # (translatable)
 SITE_URL = "https://algosig.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://chicagopython.github.io/"
+BASE_URL = "https://algosig.github.io/"
 BLOG_EMAIL = "chicago-sig-organizers@python.org"
 BLOG_DESCRIPTION = "The Chicago Python User Group's Algorithms Special Interest Group"  # (translatable)
 
