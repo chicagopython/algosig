@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AlgoSig (Posts about array)</title><link>https://algosig.github.io/</link><description></description><atom:link href="https://algosig.github.io/categories/array.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:chicago-sig-organizers@python.org"&gt;Chicago Python User Group&lt;/a&gt; 
+&lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html"&gt;
+&lt;img alt="Gnu Public License version 3.0"
+style="border-width:0;"
+src="https://www.gnu.org/graphics/gplv3-with-text-84x42.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 01 Apr 2019 03:17:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Remove Duplicates from an Array</title><link>https://algosig.github.io/posts/remove-duplicates-from-an-array/</link><dc:creator>Chicago Python User Group</dc:creator><description>&lt;div&gt;&lt;h2&gt;1. Problem Link&lt;/h2&gt;
+&lt;p&gt;The problem can be found &lt;a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;2. Problem Solution&lt;/h2&gt;&lt;/div&gt;</description><category>array</category><guid>https://algosig.github.io/posts/remove-duplicates-from-an-array/</guid><pubDate>Sun, 31 Mar 2019 05:00:00 GMT</pubDate></item></channel></rss>

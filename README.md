@@ -1,2 +1,6 @@
-# algosig
-Algo SIG is Chipy's dedicated special interest group where we discuss and practice all things algorithms.
+# This is a Nikola blog repository
+
+The main source is in the [`src` directory][1]; the content here should be auto-generated from that source.
+
+
+[1]: https://github.com/chicagopython/chicagopython.github.io/tree/src
