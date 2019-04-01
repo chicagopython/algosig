@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1554089074.224179
+_modified_time = 1554089612.28316
 _enable_loop = True
 _template_filename = 'themes/custom/templates/base_footer.tmpl'
 _template_uri = 'base_footer.tmpl'
@@ -28,8 +28,8 @@ def render_body(context,**pageargs):
 def render_html_footer(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        content_footer = context.get('content_footer', UNDEFINED)
         template_hooks = context.get('template_hooks', UNDEFINED)
+        content_footer = context.get('content_footer', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if content_footer:
