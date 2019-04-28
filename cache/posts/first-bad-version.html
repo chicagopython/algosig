@@ -1,3 +1,32 @@
 <h1>1. Problem Link</h1>
 <p>The problem can be found <a href="https://leetcode.com/problems/first-bad-version/">here</a></p>
-<h1>2. Problem Solution</h1>
+<h1>2. Problem Description</h1>
+<p>You have <em>n</em> versions <em>1,2,3,...,n</em> and you want to find the first one that broke the code.</p>
+<p>You are given a function <code>isBadVersion(version)</code> which will return <code>True</code> if the version is greater or equal to first broken version. Otherwise it return <code>False</code>.</p>
+<p><strong>Part 2</strong> of this problem (not shown on LeetCode) is to solve without knowing in advance how many versions <em>n</em> you have to check. </p>
+<h1>3. Problem Solution</h1>
+<p>This solution is for <strong>Part 2</strong>, solved without knowing the total number of versions <em>n</em>. Instead of finding the midpoint between the current value and the last, the index of the current is multiplied by 2.</p>
+<p>Other solutions can be found on the LeetCode link above.</p>
+<p><a href="link://listing/listings/part2_without_n.py">part2_without_n.py</a>  <a href="link://listing_source/listings/part2_without_n.py">(Source)</a><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">right</span><span class="o">+</span><span class="n">left</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">right</span> <span class="o">&lt;=</span> <span class="n">left</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">left</span>
+    <span class="k">if</span> <span class="n">isBadVersion</span><span class="p">(</span><span class="n">mid</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">firstBadVersion</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></p>
