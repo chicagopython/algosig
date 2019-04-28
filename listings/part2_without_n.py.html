@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html prefix="            og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="part2_without_n.py">
+<meta name="viewport" content="width=device-width">
+<title>part2_without_n.py | AlgoSig</title>
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#18354c">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://chicagopython.github.io/algosig/listings/part2_without_n.py.html">
+<link rel="icon" href="../favicon.ico" sizes="16x16">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="mask-icon" href="../safari-pinned-tab.svg" color="#1f91c2">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#cceeff">
+<!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+         
+    <header id="header" class="hidden-print"><nav id="menu"><a href="https://chicagopython.github.io/algosig/" title="AlgoSig" rel="home">
+        <img src="../assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
+          AlgoSig
+    </a>
+
+    <ul>
+<li><a href="../categories/">Categories</a></li>
+                <li><a href="../about/">About</a></li>
+    
+    
+    </ul></nav></header><main id="content"><nav class="breadcrumbs"><ul class="breadcrumb">
+<li><a href=".">listings</a></li>
+                <li>part2_without_n.py</li>
+</ul></nav><h1>part2_without_n.py
+            <small><a href="part2_without_n.py">(Source)</a></small>
+        </h1>
+    <table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="#listingspart2_without_npy-1"> 1</a>
+<a href="#listingspart2_without_npy-2"> 2</a>
+<a href="#listingspart2_without_npy-3"> 3</a>
+<a href="#listingspart2_without_npy-4"> 4</a>
+<a href="#listingspart2_without_npy-5"> 5</a>
+<a href="#listingspart2_without_npy-6"> 6</a>
+<a href="#listingspart2_without_npy-7"> 7</a>
+<a href="#listingspart2_without_npy-8"> 8</a>
+<a href="#listingspart2_without_npy-9"> 9</a>
+<a href="#listingspart2_without_npy-10">10</a>
+<a href="#listingspart2_without_npy-11">11</a></pre></div></td>
+<td class="code"><pre class="code literal-block"><a name="listingspart2_without_npy-1"></a><span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<a name="listingspart2_without_npy-2"></a>    <span class="n">mid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">right</span><span class="o">+</span><span class="n">left</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<a name="listingspart2_without_npy-3"></a>    <span class="k">if</span> <span class="n">right</span> <span class="o">&lt;=</span> <span class="n">left</span><span class="p">:</span>
+<a name="listingspart2_without_npy-4"></a>        <span class="k">return</span> <span class="n">left</span>
+<a name="listingspart2_without_npy-5"></a>    <span class="k">if</span> <span class="n">isBadVersion</span><span class="p">(</span><span class="n">mid</span><span class="p">):</span>
+<a name="listingspart2_without_npy-6"></a>        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+<a name="listingspart2_without_npy-7"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="listingspart2_without_npy-8"></a>        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<a name="listingspart2_without_npy-9"></a>    
+<a name="listingspart2_without_npy-10"></a><span class="k">def</span> <span class="nf">firstBadVersion</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a name="listingspart2_without_npy-11"></a>    <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></td>
+</tr></table></main><footer id="footer"><p class="light-sans">© Chicago Python User Group · Subscribe via <a href="../rss.xml">RSS</a> · Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> · 
+<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+<img alt="Gnu Public License version 3.0" style="border-width:0;" src="https://www.gnu.org/graphics/gplv3-with-text-84x42.png"></a></p>
+            
+        </footer>
+</body>
+</html>

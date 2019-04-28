@@ -2,48 +2,52 @@
 <html prefix="            og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="The Chicago Python User Group's Algorithms Special Interest Group">
 <meta name="viewport" content="width=device-width">
-<title>AlgoSig</title>
-<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<title>Implement a Prefix Tree (Trie) | AlgoSig</title>
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#18354c">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="https://chicagopython.github.io/algosig/">
-<link rel="icon" href="favicon.ico" sizes="16x16">
-<link rel="manifest" href="site.webmanifest">
-<link rel="mask-icon" href="safari-pinned-tab.svg" color="#1f91c2">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://chicagopython.github.io/algosig/posts/implement-a-prefix-tree-trie/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#1f91c2">
 <meta name="msapplication-TileColor" content="#00aba9">
 <meta name="theme-color" content="#cceeff">
-<!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="prefetch" href="posts/implement-a-prefix-tree-trie/" type="text/html">
+<!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<meta name="author" content="Chicago Python User Group">
+<link rel="prev" href="../longest-palindromic-substring/" title="Longest Palindromic Substring" type="text/html">
+<meta name="twitter:card" content="summary">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
          
     <header id="header" class="hidden-print"><nav id="menu"><a href="https://chicagopython.github.io/algosig/" title="AlgoSig" rel="home">
-        <img src="assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
+        <img src="../../assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
           AlgoSig
     </a>
 
     <ul>
-<li><a href="categories/">Categories</a></li>
-                <li><a href="about/">About</a></li>
+<li><a href="../../categories/">Categories</a></li>
+                <li><a href="../../about/">About</a></li>
     
     
-    </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text"><img src="assets/img/team-sales-business-meeting_4460x4460.jpg" alt="article thumbnail"><h3 class="p-name entry-title"><a href="posts/implement-a-prefix-tree-trie/" class="u-url">Implement a Prefix Tree (Trie)</a></h3>
-    <span class="metadata">
-        <time datetime="2019-04-15T21:10:03-05:00">April 15, 2019</time><i class="fas fa-tags"></i>
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="metadata">
+              <p class="commentline">
         
-      <ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="categories/autocomplete/" rel="tag">autocomplete</a></li>
-            <li><a class="tag p-category" href="categories/tree/" rel="tag">tree</a></li>
-            <li><a class="tag p-category" href="categories/trie/" rel="tag">trie</a></li>
-      </ul></span>
-    <!--
-    <div class="p-summary entry-summary">
-    <div><p><img src="/assets/img/trie.png"></p>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/implement-a-prefix-tree-trie.html">Comments</a>
+
+
+          
+
+        </p>
+</div>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Implement a Prefix Tree (Trie)</a></h1>
+
+        <time datetime="2019-04-15T21:10:03-05:00" itemprop="datePublished">April 15, 2019</time></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p><img src="../../assets/img/trie.png"></p>
 <h2>1. Problem Link</h2>
 <p>The problem can be found <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">here</a></p>
 <h2>2. Problem Description</h2>
@@ -51,7 +55,8 @@
 <p><em>Part 2</em> of this problem (not shown on LeetCode) is to implement an <code>autoComplete</code> method.</p>
 <h2>3. Solution Using Node Class and Storing Entire Word at Leaf</h2>
 <p>This solution uses a <code>Node</code> class which makes things easier to keep track of. Storing the entire word in the end of word seperator makes the implementation less tricky. However this unfortunetly causes the space complexity to be <code>O(n)</code> where <code>n</code> is the number of words.</p>
-<p><a href="link://listing/listings/trie1.py">trie1.py</a>  <a href="link://listing_source/listings/trie1.py">(Source)</a></p><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+<p><a href="../../listings/trie1.py.html">trie1.py</a>  <a href="../../listings/trie1.py">(Source)</a></p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">letter</span> <span class="o">=</span> <span class="n">letter</span>
@@ -114,7 +119,8 @@
 
 <h2>4. Solution Using Just Dictionary and End of Word Marker $</h2>
 <p>Since this only stores the letters, and not the entire word, the space complexity is much less.</p>
-<p><a href="link://listing/listings/trie2.py">trie2.py</a>  <a href="link://listing_source/listings/trie2.py">(Source)</a></p><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
+<p><a href="../../listings/trie2.py.html">trie2.py</a>  <a href="../../listings/trie2.py">(Source)</a></p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="p">{}</span>
@@ -194,85 +200,51 @@ List: 5.19 ms
 Input: python
 Trie:  0.05 ms
 List:  7.81 ms
-</pre></div>    <hr/>
-    </div>-->
-    </article><article class="h-entry post-text"><img src="assets/img/team-sales-business-meeting_4460x4460.jpg" alt="article thumbnail"><h3 class="p-name entry-title"><a href="posts/longest-palindromic-substring/" class="u-url">Longest Palindromic Substring</a></h3>
-    <span class="metadata">
-        <time datetime="2019-03-31T22:47:50-05:00">March 31, 2019</time><i class="fas fa-tags"></i>
-        
-      <ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="categories/array/" rel="tag">array</a></li>
-            <li><a class="tag p-category" href="categories/string/" rel="tag">string</a></li>
-      </ul></span>
-    <!--
-    <div class="p-summary entry-summary">
-    <div><h2>1. Problem Link</h2>
-<p>The problem can be found <a href="https://leetcode.com/problems/longest-palindromic-substring/">here</a></p>
-<h2>2. Problem Solution</h2></div>    <hr/>
-    </div>-->
-    </article><article class="h-entry post-text"><img src="assets/img/team-sales-business-meeting_4460x4460.jpg" alt="article thumbnail"><h3 class="p-name entry-title"><a href="posts/first-bad-version/" class="u-url">First Bad Version</a></h3>
-    <span class="metadata">
-        <time datetime="2019-03-31T00:00:00-05:00">March 31, 2019</time><i class="fas fa-tags"></i>
-        
-      <ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="categories/array/" rel="tag">array</a></li>
-            <li><a class="tag p-category" href="categories/binary-search/" rel="tag">binary-search</a></li>
-      </ul></span>
-    <!--
-    <div class="p-summary entry-summary">
-    <div><h2>1. Problem Link</h2>
-<p>The problem can be found <a href="https://leetcode.com/problems/first-bad-version/">here</a></p>
-<h2>2. Problem Description</h2>
-<p>You have <em>n</em> versions <em>1,2,3,...,n</em> and you want to find the first one that broke the code.</p>
-<p>You are given a function <code>isBadVersion(version)</code> which will return <code>True</code> if the version is greater or equal to first broken version. Otherwise it return <code>False</code>.</p>
-<p><strong>Part 2</strong> of this problem (not shown on LeetCode) is to solve without knowing in advance how many versions <em>n</em> you have to check. </p>
-<h2>3. Problem Solution</h2>
-<p>This solution is for <strong>Part 2</strong>, solved without knowing the total number of versions <em>n</em>. Instead of finding the midpoint between the current value and the last, the index of the current is multiplied by 2.</p>
-<p>Other solutions can be found on the LeetCode link above.</p>
-<p><a href="link://listing/listings/part2_without_n.py">part2_without_n.py</a>  <a href="link://listing_source/listings/part2_without_n.py">(Source)</a></p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
-    <span class="n">mid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">right</span><span class="o">+</span><span class="n">left</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">right</span> <span class="o">&lt;=</span> <span class="n">left</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">left</span>
-    <span class="k">if</span> <span class="n">isBadVersion</span><span class="p">(</span><span class="n">mid</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-    
-<span class="k">def</span> <span class="nf">firstBadVersion</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>    <hr/>
-    </div>-->
-    </article><article class="h-entry post-text"><img src="https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2850&amp;q=80" alt="article thumbnail"><h3 class="p-name entry-title"><a href="posts/remove-duplicates-from-an-array/" class="u-url">Remove Duplicates from an Array</a></h3>
-    <span class="metadata">
-        <time datetime="2019-03-31T00:00:00-05:00">March 31, 2019</time><i class="fas fa-tags"></i>
-        
-      <ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="categories/cat_python-101/" rel="category"> python-101</a></li>
-            <li><a class="tag p-category" href="categories/array/" rel="tag">array</a></li>
-      </ul></span>
-    <!--
-    <div class="p-summary entry-summary">
-    <div><h2>1. Problem Link</h2>
-<p>The problem can be found <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">here</a></p>
-<h2>2. Problem Solution</h2></div>    <hr/>
-    </div>-->
-    </article>
+</pre>
 </div>
-
-
+    </div>
+    <aside class="postpromonav"><div>
+    <span class="hidden-print">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></span>
+    <span class="hidden-print">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><script type="IN/Share" data-url="https://chicagopython.github.io/algosig/posts/implement-a-prefix-tree-trie/"></script></span>
+    </div>
+    <nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/autocomplete/" rel="tag">autocomplete</a></li>
+            <li><a class="tag p-category" href="../../categories/tree/" rel="tag">tree</a></li>
+            <li><a class="tag p-category" href="../../categories/trie/" rel="tag">trie</a></li>
+      </ul>
+<ul class="pager hidden-print">
+<li>
+            <a href="../longest-palindromic-substring/" rel="prev" class="previous" title="Longest Palindromic Substring"><span aria-hidden="true">‹ </span>Older</a>
+        </li>
+        <li>
+            <span class="disabled">Newer<span aria-hidden="true"> ›</span></span>
+        </li>
+    </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-       <script>var disqus_shortname="chicagopython-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p class="light-sans">© Chicago Python User Group · Subscribe via <a href="rss.xml">RSS</a> · Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> · 
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="chicagopython-github-io",
+            disqus_url="https://chicagopython.github.io/algosig/posts/implement-a-prefix-tree-trie/",
+        disqus_title="Implement a Prefix Tree (Trie)",
+        disqus_identifier="cache/posts/implement-a-prefix-tree-trie.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="chicagopython-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p class="light-sans">© Chicago Python User Group · Subscribe via <a href="../../rss.xml">RSS</a> · Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> · 
 <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html">
 <img alt="Gnu Public License version 3.0" style="border-width:0;" src="https://www.gnu.org/graphics/gplv3-with-text-84x42.png"></a></p>
             

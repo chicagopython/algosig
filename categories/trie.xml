@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AlgoSig</title><link>https://chicagopython.github.io/algosig/</link><description>The Chicago Python User Group's Algorithms Special Interest Group</description><atom:link href="https://chicagopython.github.io/algosig/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:chicago-sig-organizers@python.org"&gt;Chicago Python User Group&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AlgoSig (Posts about trie)</title><link>https://chicagopython.github.io/algosig/</link><description></description><atom:link href="https://chicagopython.github.io/algosig/categories/trie.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:chicago-sig-organizers@python.org"&gt;Chicago Python User Group&lt;/a&gt; 
 &lt;a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html"&gt;
 &lt;img alt="Gnu Public License version 3.0"
 style="border-width:0;"
@@ -154,39 +154,4 @@ List: 5.19 ms
 Input: python
 Trie:  0.05 ms
 List:  7.81 ms
-&lt;/pre&gt;&lt;/div&gt;</description><category>autocomplete</category><category>tree</category><category>trie</category><guid>https://chicagopython.github.io/algosig/posts/implement-a-prefix-tree-trie/</guid><pubDate>Tue, 16 Apr 2019 02:10:03 GMT</pubDate></item><item><title>Longest Palindromic Substring</title><link>https://chicagopython.github.io/algosig/posts/longest-palindromic-substring/</link><dc:creator>Chicago Python User Group</dc:creator><description>&lt;div&gt;&lt;h2&gt;1. Problem Link&lt;/h2&gt;
-&lt;p&gt;The problem can be found &lt;a href="https://leetcode.com/problems/longest-palindromic-substring/"&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;2. Problem Solution&lt;/h2&gt;&lt;/div&gt;</description><category>array</category><category>string</category><guid>https://chicagopython.github.io/algosig/posts/longest-palindromic-substring/</guid><pubDate>Mon, 01 Apr 2019 03:47:50 GMT</pubDate></item><item><title>First Bad Version</title><link>https://chicagopython.github.io/algosig/posts/first-bad-version/</link><dc:creator>Chicago Python User Group</dc:creator><description>&lt;div&gt;&lt;h2&gt;1. Problem Link&lt;/h2&gt;
-&lt;p&gt;The problem can be found &lt;a href="https://leetcode.com/problems/first-bad-version/"&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;2. Problem Description&lt;/h2&gt;
-&lt;p&gt;You have &lt;em&gt;n&lt;/em&gt; versions &lt;em&gt;1,2,3,...,n&lt;/em&gt; and you want to find the first one that broke the code.&lt;/p&gt;
-&lt;p&gt;You are given a function &lt;code&gt;isBadVersion(version)&lt;/code&gt; which will return &lt;code&gt;True&lt;/code&gt; if the version is greater or equal to first broken version. Otherwise it return &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Part 2&lt;/strong&gt; of this problem (not shown on LeetCode) is to solve without knowing in advance how many versions &lt;em&gt;n&lt;/em&gt; you have to check. &lt;/p&gt;
-&lt;h2&gt;3. Problem Solution&lt;/h2&gt;
-&lt;p&gt;This solution is for &lt;strong&gt;Part 2&lt;/strong&gt;, solved without knowing the total number of versions &lt;em&gt;n&lt;/em&gt;. Instead of finding the midpoint between the current value and the last, the index of the current is multiplied by 2.&lt;/p&gt;
-&lt;p&gt;Other solutions can be found on the LeetCode link above.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://chicagopython.github.io/algosig/listings/part2_without_n.py.html"&gt;part2_without_n.py&lt;/a&gt;  &lt;a href="https://chicagopython.github.io/algosig/listings/part2_without_n.py"&gt;(Source)&lt;/a&gt;&lt;/p&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;helper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;right&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;mid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;right&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;right&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;left&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;isBadVersion&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mid&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;helper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mid&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;helper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mid&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;right&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;firstBadVersion&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;helper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</description><category>array</category><category>binary-search</category><guid>https://chicagopython.github.io/algosig/posts/first-bad-version/</guid><pubDate>Sun, 31 Mar 2019 05:00:00 GMT</pubDate></item><item><title>Remove Duplicates from an Array</title><link>https://chicagopython.github.io/algosig/posts/remove-duplicates-from-an-array/</link><dc:creator>Chicago Python User Group</dc:creator><description>&lt;div&gt;&lt;h2&gt;1. Problem Link&lt;/h2&gt;
-&lt;p&gt;The problem can be found &lt;a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/"&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;2. Problem Solution&lt;/h2&gt;&lt;/div&gt;</description><category>array</category><guid>https://chicagopython.github.io/algosig/posts/remove-duplicates-from-an-array/</guid><pubDate>Sun, 31 Mar 2019 05:00:00 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><category>autocomplete</category><category>tree</category><category>trie</category><guid>https://chicagopython.github.io/algosig/posts/implement-a-prefix-tree-trie/</guid><pubDate>Tue, 16 Apr 2019 02:10:03 GMT</pubDate></item></channel></rss>

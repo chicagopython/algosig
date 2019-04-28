@@ -7,11 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://chicagopython.github.io/algosig/categories/array.xml</loc>
-  <lastmod>2019-04-01T03:58:00Z</lastmod>
+  <lastmod>2019-04-28T23:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://chicagopython.github.io/algosig/categories/autocomplete.xml</loc>
+  <lastmod>2019-04-28T23:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://chicagopython.github.io/algosig/categories/binary-search.xml</loc>
-  <lastmod>2019-04-01T03:58:00Z</lastmod>
+  <lastmod>2019-04-28T23:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://chicagopython.github.io/algosig/categories/cat_python-101.xml</loc>
@@ -22,11 +26,19 @@
   <lastmod>2019-04-01T03:58:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://chicagopython.github.io/algosig/categories/tree.xml</loc>
+  <lastmod>2019-04-28T23:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://chicagopython.github.io/algosig/categories/trie.xml</loc>
+  <lastmod>2019-04-28T23:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://chicagopython.github.io/algosig/rss.xml</loc>
-  <lastmod>2019-04-01T03:58:00Z</lastmod>
+  <lastmod>2019-04-28T23:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://chicagopython.github.io/algosig/sitemap.xml</loc>
-  <lastmod>2019-04-01T03:58:00Z</lastmod>
+  <lastmod>2019-04-28T23:59:00Z</lastmod>
  </sitemap>
 </sitemapindex>
