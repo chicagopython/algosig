@@ -15,14 +15,15 @@
 <meta name="msapplication-TileColor" content="#00aba9">
 <meta name="theme-color" content="#cceeff">
 <!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<meta name="author" content="Chicago Python User Group">
-<link rel="prev" href="../longest-palindromic-substring/" title="Longest Palindromic Substring" type="text/html">
+<meta name="author" content="Kevin Nasto">
+<link rel="prev" href="../time-planner/" title="Time Planner" type="text/html">
+<link rel="next" href="../bitwise-and-3-tuples/" title="Bitwise and 3-tuples" type="text/html">
 <meta name="twitter:card" content="summary">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
          
-    <header id="header" class="hidden-print"><nav id="menu"><a href="https://chicagopython.github.io/algosig/" title="AlgoSig" rel="home">
+    <header id="header" class="hidden-print"><nav id="menu"><a href="../../" title="AlgoSig" rel="home">
         <img src="../../assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
           AlgoSig
     </a>
@@ -35,7 +36,7 @@
     </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="metadata">
               <p class="commentline">
         
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/implement-a-prefix-tree-trie.html">Comments</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2019-04-04-implement-a-prefix-tree-trie.html">Comments</a>
 
 
           
@@ -45,18 +46,21 @@
         
     <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Implement a Prefix Tree (Trie)</a></h1>
 
-        <time datetime="2019-04-15T21:10:03-05:00" itemprop="datePublished">April 15, 2019</time></header><div class="e-content entry-content" itemprop="articleBody text">
+        <time datetime="2019-04-04T00:00:00-05:00" itemprop="datePublished">April 4, 2019</time>
+        by <a href="../../authors/kevin-nasto/">Kevin Nasto</a>
+        in <a href="../../categories/cat_algosig-2">AlgoSIG 2</a>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p><img src="../../assets/img/trie.png"></p>
-<h2>1. Problem Link</h2>
+<h2>Description</h2>
 <p>The problem can be found <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">here</a></p>
-<h2>2. Problem Description</h2>
 <p>Implement a trie (prefix tree) with <code>insert</code>, <code>search</code>, and <code>startsWith</code> methods. Tries are used in many applications such as spell checking, autocompletion, and ip routing.</p>
 <p><em>Part 2</em> of this problem (not shown on LeetCode) is to implement an <code>autoComplete</code> method.</p>
-<h2>3. Solution Using Node Class and Storing Entire Word at Leaf</h2>
+<h2>Solution 1: Using Node Class and Storing Entire Word at Leaf</h2>
 <p>This solution uses a <code>Node</code> class which makes things easier to keep track of. Storing the entire word in the end of word seperator makes the implementation less tricky. However this unfortunetly causes the space complexity to be <code>O(n)</code> where <code>n</code> is the number of words.</p>
-<p><a href="../../listings/trie1.py.html">trie1.py</a>  <a href="../../listings/trie1.py">(Source)</a></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+<pre class="code literal-block"><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">letter</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">letter</span> <span class="o">=</span> <span class="n">letter</span>
@@ -75,7 +79,7 @@
                 <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
         <span class="n">node</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">word</span>
-        
+
     <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
@@ -115,16 +119,16 @@
         <span class="k">return</span>
     <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
         <span class="n">autocomplete_helper</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
-</pre></div>
+</pre>
 
-<h2>4. Solution Using Just Dictionary and End of Word Marker $</h2>
+
+<h2>Solution 2: Using Just Dictionary and End of Word Marker $</h2>
 <p>Since this only stores the letters, and not the entire word, the space complexity is much less.</p>
-<p><a href="../../listings/trie2.py.html">trie2.py</a>  <a href="../../listings/trie2.py">(Source)</a></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
+<pre class="code literal-block"><span></span><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="p">{}</span>
-        
+
     <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
@@ -132,7 +136,7 @@
                 <span class="n">node</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
         <span class="n">node</span><span class="p">[</span><span class="s1">'$'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># End of word</span>
-        
+
     <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
@@ -144,7 +148,7 @@
             <span class="k">return</span> <span class="bp">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">False</span>
-        
+
     <span class="k">def</span> <span class="nf">startsWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
         <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span>
         <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
@@ -171,35 +175,36 @@
         <span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">node</span><span class="p">:</span>
         <span class="n">print_tree</span><span class="p">(</span><span class="n">parent</span> <span class="o">+</span> <span class="n">letter</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">node</span><span class="p">[</span><span class="n">letter</span><span class="p">])</span>
-</pre></div>
+</pre>
 
-<h2>5. Test Code and Benchmarking</h2>
-<pre class="code literal-block"><span></span>trie = Trie()
-trie.insert('cat')
-trie.insert('can')
-trie.insert('and')
-trie.insert('ant')
-trie.insert('antenna')
 
-print(trie.autocomplete('an'))
+<h2>Test Code and Benchmarking</h2>
+<pre class="code literal-block"><span></span><span class="n">trie</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">()</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">'cat'</span><span class="p">)</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">'can'</span><span class="p">)</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">'and'</span><span class="p">)</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">'ant'</span><span class="p">)</span>
+<span class="n">trie</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">'antenna'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">trie</span><span class="o">.</span><span class="n">autocomplete</span><span class="p">(</span><span class="s1">'an'</span><span class="p">))</span>
 </pre>
 
 
 <p>Using a list of 8000 most frequently searched words, here are some benchmarks.</p>
-<pre class="code literal-block"><span></span>77848 Bytes using python list
-1184  Bytes using above trie
+<pre class="code literal-block"><span></span><span class="mi">77848</span> <span class="n">Bytes</span> <span class="k">using</span> <span class="n">python</span> <span class="n">list</span>
+<span class="mi">1184</span>  <span class="n">Bytes</span> <span class="k">using</span> <span class="n">above</span> <span class="n">trie</span>
 
-Input: p
-Trie:  4.71 ms
-List:  4.28 ms
+<span class="k">Input</span><span class="p">:</span> <span class="n">p</span>
+<span class="n">Trie</span><span class="p">:</span>  <span class="mi">4</span><span class="p">.</span><span class="mi">71</span> <span class="n">ms</span>
+<span class="n">List</span><span class="p">:</span>  <span class="mi">4</span><span class="p">.</span><span class="mi">28</span> <span class="n">ms</span>
 
-Input: cat
-Trie: 0.25 ms
-List: 5.19 ms
+<span class="k">Input</span><span class="p">:</span> <span class="n">cat</span>
+<span class="n">Trie</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">25</span> <span class="n">ms</span>
+<span class="n">List</span><span class="p">:</span> <span class="mi">5</span><span class="p">.</span><span class="mi">19</span> <span class="n">ms</span>
 
-Input: python
-Trie:  0.05 ms
-List:  7.81 ms
+<span class="k">Input</span><span class="p">:</span> <span class="n">python</span>
+<span class="n">Trie</span><span class="p">:</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">05</span> <span class="n">ms</span>
+<span class="n">List</span><span class="p">:</span>  <span class="mi">7</span><span class="p">.</span><span class="mi">81</span> <span class="n">ms</span>
 </pre>
 </div>
     </div>
@@ -211,16 +216,17 @@ List:  7.81 ms
       <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><script type="IN/Share" data-url="https://chicagopython.github.io/algosig/posts/implement-a-prefix-tree-trie/"></script></span>
     </div>
     <nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/autocomplete/" rel="tag">autocomplete</a></li>
+<li><a class="tag p-category" href="../../categories/cat_algosig-2/" rel="category"> AlgoSIG 2</a></li>
+            <li><a class="tag p-category" href="../../categories/autocomplete/" rel="tag">autocomplete</a></li>
             <li><a class="tag p-category" href="../../categories/tree/" rel="tag">tree</a></li>
             <li><a class="tag p-category" href="../../categories/trie/" rel="tag">trie</a></li>
       </ul>
 <ul class="pager hidden-print">
 <li>
-            <a href="../longest-palindromic-substring/" rel="prev" class="previous" title="Longest Palindromic Substring"><span aria-hidden="true">‹ </span>Older</a>
+            <a href="../time-planner/" rel="prev" class="previous" title="Time Planner"><span aria-hidden="true">‹ </span>Older</a>
         </li>
         <li>
-            <span class="disabled">Newer<span aria-hidden="true"> ›</span></span>
+            <a href="../bitwise-and-3-tuples/" rel="next" class="next" title="Bitwise and 3-tuples">Newer<span aria-hidden="true"> ›</span></a>
         </li>
     </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -230,7 +236,7 @@ List:  7.81 ms
         var disqus_shortname ="chicagopython-github-io",
             disqus_url="https://chicagopython.github.io/algosig/posts/implement-a-prefix-tree-trie/",
         disqus_title="Implement a Prefix Tree (Trie)",
-        disqus_identifier="cache/posts/implement-a-prefix-tree-trie.html",
+        disqus_identifier="cache/posts/2019-04-04-implement-a-prefix-tree-trie.html",
         disqus_config = function () {
             this.language = "en";
         };

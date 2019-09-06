@@ -16,14 +16,13 @@
 <meta name="theme-color" content="#cceeff">
 <!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <meta name="author" content="Chicago Python User Group">
-<link rel="prev" href="../remove-duplicates-from-an-array/" title="Remove Duplicates from an Array" type="text/html">
-<link rel="next" href="../longest-palindromic-substring/" title="Longest Palindromic Substring" type="text/html">
+<link rel="next" href="../time-planner/" title="Time Planner" type="text/html">
 <meta name="twitter:card" content="summary">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
          
-    <header id="header" class="hidden-print"><nav id="menu"><a href="https://chicagopython.github.io/algosig/" title="AlgoSig" rel="home">
+    <header id="header" class="hidden-print"><nav id="menu"><a href="../../" title="AlgoSig" rel="home">
         <img src="../../assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
           AlgoSig
     </a>
@@ -36,7 +35,7 @@
     </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="metadata">
               <p class="commentline">
         
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/first-bad-version.html">Comments</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2019-03-07-first-bad-version.html">Comments</a>
 
 
           
@@ -46,7 +45,11 @@
         
     <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">First Bad Version</a></h1>
 
-        <time datetime="2019-03-31T00:00:00-05:00" itemprop="datePublished">March 31, 2019</time></header><div class="e-content entry-content" itemprop="articleBody text">
+        <time datetime="2019-03-07T00:00:00-05:00" itemprop="datePublished">March 7, 2019</time>
+        in <a href="../../categories/cat_algosig-1">AlgoSIG 1</a>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <h2>1. Problem Link</h2>
 <p>The problem can be found <a href="https://leetcode.com/problems/first-bad-version/">here</a></p>
@@ -57,21 +60,7 @@
 <h2>3. Problem Solution</h2>
 <p>This solution is for <strong>Part 2</strong>, solved without knowing the total number of versions <em>n</em>. Instead of finding the midpoint between the current value and the last, the index of the current is multiplied by 2.</p>
 <p>Other solutions can be found on the LeetCode link above.</p>
-<p><a href="../../listings/part2_without_n.py.html">part2_without_n.py</a>  <a href="../../listings/part2_without_n.py">(Source)</a></p>
-<table class="highlighttable"><tr>
-<td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td>
-<td class="code">
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<pre class="code literal-block"><span></span><span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
     <span class="n">mid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">right</span><span class="o">+</span><span class="n">left</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">right</span> <span class="o">&lt;=</span> <span class="n">left</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">left</span>
@@ -79,12 +68,10 @@
         <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">right</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-    
+
 <span class="k">def</span> <span class="nf">firstBadVersion</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</td>
-</tr></table>
+</pre>
 </div>
     </div>
     <aside class="postpromonav"><div>
@@ -95,15 +82,16 @@
       <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><script type="IN/Share" data-url="https://chicagopython.github.io/algosig/posts/first-bad-version/"></script></span>
     </div>
     <nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/array/" rel="tag">array</a></li>
+<li><a class="tag p-category" href="../../categories/cat_algosig-1/" rel="category"> AlgoSIG 1</a></li>
+            <li><a class="tag p-category" href="../../categories/array/" rel="tag">array</a></li>
             <li><a class="tag p-category" href="../../categories/binary-search/" rel="tag">binary-search</a></li>
       </ul>
 <ul class="pager hidden-print">
 <li>
-            <a href="../remove-duplicates-from-an-array/" rel="prev" class="previous" title="Remove Duplicates from an Array"><span aria-hidden="true">‹ </span>Older</a>
+            <span class="disabled"><span aria-hidden="true">‹ </span>Older</span>
         </li>
         <li>
-            <a href="../longest-palindromic-substring/" rel="next" class="next" title="Longest Palindromic Substring">Newer<span aria-hidden="true"> ›</span></a>
+            <a href="../time-planner/" rel="next" class="next" title="Time Planner">Newer<span aria-hidden="true"> ›</span></a>
         </li>
     </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -113,7 +101,7 @@
         var disqus_shortname ="chicagopython-github-io",
             disqus_url="https://chicagopython.github.io/algosig/posts/first-bad-version/",
         disqus_title="First Bad Version",
-        disqus_identifier="cache/posts/first-bad-version.html",
+        disqus_identifier="cache/posts/2019-03-07-first-bad-version.html",
         disqus_config = function () {
             this.language = "en";
         };

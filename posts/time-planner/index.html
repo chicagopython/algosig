@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html prefix="            og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Time Planner | AlgoSig</title>
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#18354c">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://chicagopython.github.io/algosig/posts/time-planner/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#1f91c2">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#cceeff">
+<!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<meta name="author" content="Chris Luedtke">
+<link rel="prev" href="../first-bad-version/" title="First Bad Version" type="text/html">
+<link rel="next" href="../implement-a-prefix-tree-trie/" title="Implement a Prefix Tree (Trie)" type="text/html">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+         
+    <header id="header" class="hidden-print"><nav id="menu"><a href="../../" title="AlgoSig" rel="home">
+        <img src="../../assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
+          AlgoSig
+    </a>
+
+    <ul>
+<li><a href="../../categories/">Categories</a></li>
+                <li><a href="../../about/">About</a></li>
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="metadata">
+              <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2019-04-04-time-planner.html">Comments</a>
+
+
+          
+
+        </p>
+</div>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Time Planner</a></h1>
+
+        <time datetime="2019-04-04T00:00:00-05:00" itemprop="datePublished">April 4, 2019</time>
+        by <a href="../../authors/chris-luedtke/">Chris Luedtke</a>
+        in <a href="../../categories/cat_algosig-2">AlgoSIG 2</a>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<h2>Description</h2>
+<p>Implement a time planner that receives the availability of two people, a and b, and a duration, dur. Return the earliest time slot in which both people can meet. If no satisfactory time exists, return None.</p>
+<p>You may assume availabilities are sorted.</p>
+<p>Example:</p>
+<pre class="code literal-block"><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span> <span class="p">(</span><span class="mi">140</span><span class="p">,</span> <span class="mi">210</span><span class="p">)]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">)]</span>
+<span class="n">dur</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">68</span><span class="p">)</span>
+</pre>
+
+
+<h2>Solution 1: <code>O(n^2)</code>
+</h2>
+<pre class="code literal-block"><span></span><span class="k">def</span> <span class="nf">time_planner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dur</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">avail_a</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">avail_b</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+      <span class="n">overlap</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">*</span><span class="n">avail_a</span><span class="p">))</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">*</span><span class="n">avail_b</span><span class="p">))</span>
+
+      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">overlap</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">dur</span><span class="p">:</span>
+        <span class="n">overlap</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">overlap</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">overlap</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">overlap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dur</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="bp">None</span>
+</pre>
+
+
+<h2>Solution 2: <code>O(n)</code>
+</h2>
+<pre class="code literal-block"><span></span><span class="k">def</span> <span class="nf">time_planner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dur</span><span class="p">):</span>
+  <span class="n">i_a</span><span class="p">,</span> <span class="n">i_b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+  <span class="k">while</span> <span class="n">i_a</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="n">i_b</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i_a</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i_b</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i_a</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i_b</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">start</span> <span class="o">+</span> <span class="n">dur</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">start</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">dur</span>
+
+    <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i_a</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="n">i_b</span><span class="p">][</span><span class="mi">1</span><span class="p">]:</span>
+      <span class="n">i_a</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">i_b</span> <span class="o">+=</span> <span class="mi">1</span>
+
+  <span class="k">return</span> <span class="bp">None</span>
+</pre>
+</div>
+    </div>
+    <aside class="postpromonav"><div>
+    <span class="hidden-print">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></span>
+    <span class="hidden-print">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><script type="IN/Share" data-url="https://chicagopython.github.io/algosig/posts/time-planner/"></script></span>
+    </div>
+    <nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cat_algosig-2/" rel="category"> AlgoSIG 2</a></li>
+            <li><a class="tag p-category" href="../../categories/array/" rel="tag">array</a></li>
+            <li><a class="tag p-category" href="../../categories/python-101/" rel="tag">python-101</a></li>
+      </ul>
+<ul class="pager hidden-print">
+<li>
+            <a href="../first-bad-version/" rel="prev" class="previous" title="First Bad Version"><span aria-hidden="true">‹ </span>Older</a>
+        </li>
+        <li>
+            <a href="../implement-a-prefix-tree-trie/" rel="next" class="next" title="Implement a Prefix Tree (Trie)">Newer<span aria-hidden="true"> ›</span></a>
+        </li>
+    </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="chicagopython-github-io",
+            disqus_url="https://chicagopython.github.io/algosig/posts/time-planner/",
+        disqus_title="Time Planner",
+        disqus_identifier="cache/posts/2019-04-04-time-planner.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="chicagopython-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p class="light-sans">© Chicago Python User Group · Subscribe via <a href="../../rss.xml">RSS</a> · Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> · 
+<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+<img alt="Gnu Public License version 3.0" style="border-width:0;" src="https://www.gnu.org/graphics/gplv3-with-text-84x42.png"></a></p>
+            
+        </footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html prefix="            og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Sudoku | AlgoSig</title>
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#18354c">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://chicagopython.github.io/algosig/posts/sudoku/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#1f91c2">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#cceeff">
+<!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<meta name="author" content="Chris Luedtke">
+<link rel="prev" href="../bitwise-and-3-tuples/" title="Bitwise and 3-tuples" type="text/html">
+<link rel="next" href="../equidistant-points-on-a-line/" title="Equidistant Points on a Line" type="text/html">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+         
+    <header id="header" class="hidden-print"><nav id="menu"><a href="../../" title="AlgoSig" rel="home">
+        <img src="../../assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
+          AlgoSig
+    </a>
+
+    <ul>
+<li><a href="../../categories/">Categories</a></li>
+                <li><a href="../../about/">About</a></li>
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="metadata">
+              <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2019-06-06-sudoku.html">Comments</a>
+
+
+          
+
+                  </p>
+<p class="linkline"><a href="https://leetcode.com/problems/sudoku-solve">Original site</a></p>
+        </div>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Sudoku</a></h1>
+
+        <time datetime="2019-06-06T00:00:00-05:00" itemprop="datePublished">June 6, 2019</time>
+        by <a href="../../authors/chris-luedtke/">Chris Luedtke</a>
+        in <a href="../../categories/cat_algosig-4">AlgoSIG 4</a>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<h2>Challenge</h2>
+<blockquote>
+<p>Write a program to solve any Sudoku puzzle by filling the empty cells.
+In a sudoku solution, each digit 1-9 must occur exactly once in each row, each column, and in each of the 9 3x3 sub-boxes of the grid.</p>
+</blockquote>
+<p>Sample input:</p>
+<pre class="code literal-block"><span></span><span class="n">board</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">'5'</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'7'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">'6'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">,</span> <span class="s1">'9'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'9'</span><span class="p">,</span> <span class="s1">'8'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">'8'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">'4'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'8'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">'7'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">,</span> <span class="s1">'8'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'4'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">,</span> <span class="s1">'9'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'8'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'7'</span><span class="p">,</span> <span class="s1">'9'</span><span class="p">]</span>
+<span class="p">]</span>
+</pre>
+
+
+<h2>Solution</h2>
+<pre class="code literal-block"><span></span><span class="c1"># check out https://en.wikipedia.org/wiki/Sudoku_solving_algorithms</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+
+<span class="k">def</span> <span class="nf">solve_sudoku</span><span class="p">(</span><span class="n">board</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="c1"># create a set of all values that may be placed</span>
+    <span class="n">val_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)])</span>
+
+    <span class="c1"># create a dict of slot locations to fill</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span> 
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">r_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">c_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">r_i</span><span class="p">][</span><span class="n">c_i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'.'</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r_i</span><span class="p">,</span> <span class="n">c_i</span><span class="p">)</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Iterate over slots, inserting numbers that are valid.</span>
+    <span class="c1"># If no valid number possible, backtrack to previous slot</span>
+    <span class="c1">#   and increment by 1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="c1"># look up the current row/column slot location from the dict</span>
+        <span class="n">r_i</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">c_i</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># get set of numbers already used in row/col/box constraints</span>
+        <span class="n">row_vals</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">r_i</span><span class="p">])</span>
+        <span class="n">col_vals</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c_i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+        <span class="n">b_r_i</span> <span class="o">=</span> <span class="n">r_i</span> <span class="o">//</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span>
+        <span class="n">b_c_i</span> <span class="o">=</span> <span class="n">c_i</span> <span class="o">//</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span>
+        <span class="n">box_vals</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="n">board</span><span class="p">[</span><span class="n">b_r_i</span>    <span class="p">][</span><span class="n">b_c_i</span><span class="p">:</span><span class="n">b_c_i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> 
+            <span class="n">board</span><span class="p">[</span><span class="n">b_r_i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">b_c_i</span><span class="p">:</span><span class="n">b_c_i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> 
+            <span class="n">board</span><span class="p">[</span><span class="n">b_r_i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">][</span><span class="n">b_c_i</span><span class="p">:</span><span class="n">b_c_i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="c1"># subtract already-used numbers from the set of all values</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="n">val_set</span> <span class="o">-</span> <span class="n">row_vals</span> <span class="o">-</span> <span class="n">col_vals</span> <span class="o">-</span> <span class="n">box_vals</span>
+        <span class="c1"># filter candidates to those greater than current placement</span>
+        <span class="n">cur_val</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">r_i</span><span class="p">][</span><span class="n">c_i</span><span class="p">]</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span> <span class="k">if</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">cur_val</span><span class="p">)</span>
+
+        <span class="c1"># backtrack if no valid candidates exist</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>  
+            <span class="n">board</span><span class="p">[</span><span class="n">r_i</span><span class="p">][</span><span class="n">c_i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'.'</span>
+            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="c1"># otherwise place the next greater candidate in the slot</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">board</span><span class="p">[</span><span class="n">r_i</span><span class="p">][</span><span class="n">c_i</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="c1"># board is solved if last empty slot is filled</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">board</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre>
+</div>
+    </div>
+    <aside class="postpromonav"><div>
+    <span class="hidden-print">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></span>
+    <span class="hidden-print">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><script type="IN/Share" data-url="https://chicagopython.github.io/algosig/posts/sudoku/"></script></span>
+    </div>
+    <nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cat_algosig-4/" rel="category"> AlgoSIG 4</a></li>
+      </ul>
+<ul class="pager hidden-print">
+<li>
+            <a href="../bitwise-and-3-tuples/" rel="prev" class="previous" title="Bitwise and 3-tuples"><span aria-hidden="true">‹ </span>Older</a>
+        </li>
+        <li>
+            <a href="../equidistant-points-on-a-line/" rel="next" class="next" title="Equidistant Points on a Line">Newer<span aria-hidden="true"> ›</span></a>
+        </li>
+    </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="chicagopython-github-io",
+            disqus_url="https://chicagopython.github.io/algosig/posts/sudoku/",
+        disqus_title="Sudoku",
+        disqus_identifier="cache/posts/2019-06-06-sudoku.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="chicagopython-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p class="light-sans">© Chicago Python User Group · Subscribe via <a href="../../rss.xml">RSS</a> · Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> · 
+<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+<img alt="Gnu Public License version 3.0" style="border-width:0;" src="https://www.gnu.org/graphics/gplv3-with-text-84x42.png"></a></p>
+            
+        </footer>
+</body>
+</html>

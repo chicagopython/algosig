@@ -7,82 +7,122 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://chicagopython.github.io/algosig/</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/about/</loc>
-  <lastmod>2019-04-01T03:12:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/archive.html</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/authors/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/authors/chicago-python-user-group/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/authors/chris-luedtke/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/authors/kevin-nasto/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/categories/</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/categories/array/</loc>
-  <lastmod>2019-04-01T03:17:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/categories/autocomplete/</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/categories/binary-search/</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
-  <loc>https://chicagopython.github.io/algosig/categories/cat_python-101/</loc>
-  <lastmod>2019-04-01T03:12:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_algosig-1/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
-  <loc>https://chicagopython.github.io/algosig/categories/string/</loc>
-  <lastmod>2019-04-01T03:49:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_algosig-2/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_algosig-3/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_algosig-4/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_algosig-5/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_algosig-6/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/categories/cat_algosig-7/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/categories/python-101/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/categories/tree/</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/categories/trie/</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
- </url>
- <url>
-  <loc>https://chicagopython.github.io/algosig/listings/</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
- </url>
- <url>
-  <loc>https://chicagopython.github.io/algosig/listings/part2_without_n.py.html</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
- </url>
- <url>
-  <loc>https://chicagopython.github.io/algosig/listings/trie1.py.html</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
- </url>
- <url>
-  <loc>https://chicagopython.github.io/algosig/listings/trie2.py.html</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/posts/</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/posts/bitwise-and-3-tuples/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/posts/complete-the-max-heap/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/posts/equidistant-points-on-a-line/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/posts/first-bad-version/</loc>
-  <lastmod>2019-04-01T03:32:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://chicagopython.github.io/algosig/posts/implement-a-prefix-tree-trie/</loc>
-  <lastmod>2019-04-28T23:59:00Z</lastmod>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
-  <loc>https://chicagopython.github.io/algosig/posts/longest-palindromic-substring/</loc>
-  <lastmod>2019-04-01T03:49:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/posts/merge-sort/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
  <url>
-  <loc>https://chicagopython.github.io/algosig/posts/remove-duplicates-from-an-array/</loc>
-  <lastmod>2019-04-01T03:17:00Z</lastmod>
+  <loc>https://chicagopython.github.io/algosig/posts/sudoku/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://chicagopython.github.io/algosig/posts/time-planner/</loc>
+  <lastmod>2019-09-06T22:17:00Z</lastmod>
  </url>
 </urlset>

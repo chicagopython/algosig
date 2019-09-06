@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html prefix="            og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Bitwise and 3-tuples | AlgoSig</title>
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#18354c">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://chicagopython.github.io/algosig/posts/bitwise-and-3-tuples/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#1f91c2">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#cceeff">
+<!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<meta name="author" content="Kevin Nasto">
+<link rel="prev" href="../implement-a-prefix-tree-trie/" title="Implement a Prefix Tree (Trie)" type="text/html">
+<link rel="next" href="../sudoku/" title="Sudoku" type="text/html">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+         
+    <header id="header" class="hidden-print"><nav id="menu"><a href="../../" title="AlgoSig" rel="home">
+        <img src="../../assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
+          AlgoSig
+    </a>
+
+    <ul>
+<li><a href="../../categories/">Categories</a></li>
+                <li><a href="../../about/">About</a></li>
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="metadata">
+              <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2019-05-02-bitwise-and-3-tuples.html">Comments</a>
+
+
+          
+
+                  </p>
+<p class="linkline"><a href="https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/">Original site</a></p>
+        </div>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Bitwise and 3-tuples</a></h1>
+
+        <time datetime="2019-05-02T00:00:00-05:00" itemprop="datePublished">May 2, 2019</time>
+        by <a href="../../authors/kevin-nasto/">Kevin Nasto</a>
+        in <a href="../../categories/cat_algosig-3">AlgoSIG 3</a>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<h2>Description</h2>
+<p>Given an array of numbers, <code>A</code>, find the number of 3-tuples <code>(i, j, k)</code> indices in <code>A</code>, where the bitwise AND is equal to <code>0</code>. Assume the numbers in <code>A</code> are between 0 and 2^16.</p>
+<pre class="code literal-block"><span></span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">length</span><span class="w"></span>
+<span class="mi">0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">length</span><span class="w"></span>
+<span class="mi">0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">length</span><span class="w"></span>
+<span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">represents</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">bitwise</span><span class="o">-</span><span class="ow">AND</span><span class="w"> </span><span class="n">operator</span><span class="p">.</span><span class="w"></span>
+</pre>
+
+
+<p>Example:</p>
+<pre class="code literal-block"><span></span><span class="n">Input</span><span class="o">:</span> <span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">]</span>
+<span class="n">Output</span><span class="o">:</span> <span class="mi">12</span>
+</pre>
+
+
+<h2>Solution</h2>
+<pre class="code literal-block"><span></span><span class="kn">import</span> <span class="nn">collections</span>
+
+
+<span class="k">def</span> <span class="nf">countTriplets</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+   <span class="sd">"""</span>
+<span class="sd">   :type A: List[int]</span>
+<span class="sd">   :rtype: int</span>
+<span class="sd">   """</span>
+   <span class="n">cnt</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+   <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
+       <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
+           <span class="n">cnt</span><span class="p">[</span><span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+   <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
+       <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">cnt</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+           <span class="k">if</span> <span class="n">num</span> <span class="o">&amp;</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+               <span class="n">res</span> <span class="o">+=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+   <span class="k">return</span> <span class="n">res</span>
+</pre>
+</div>
+    </div>
+    <aside class="postpromonav"><div>
+    <span class="hidden-print">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></span>
+    <span class="hidden-print">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><script type="IN/Share" data-url="https://chicagopython.github.io/algosig/posts/bitwise-and-3-tuples/"></script></span>
+    </div>
+    <nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cat_algosig-3/" rel="category"> AlgoSIG 3</a></li>
+      </ul>
+<ul class="pager hidden-print">
+<li>
+            <a href="../implement-a-prefix-tree-trie/" rel="prev" class="previous" title="Implement a Prefix Tree (Trie)"><span aria-hidden="true">‹ </span>Older</a>
+        </li>
+        <li>
+            <a href="../sudoku/" rel="next" class="next" title="Sudoku">Newer<span aria-hidden="true"> ›</span></a>
+        </li>
+    </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="chicagopython-github-io",
+            disqus_url="https://chicagopython.github.io/algosig/posts/bitwise-and-3-tuples/",
+        disqus_title="Bitwise and 3-tuples",
+        disqus_identifier="cache/posts/2019-05-02-bitwise-and-3-tuples.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="chicagopython-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p class="light-sans">© Chicago Python User Group · Subscribe via <a href="../../rss.xml">RSS</a> · Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> · 
+<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+<img alt="Gnu Public License version 3.0" style="border-width:0;" src="https://www.gnu.org/graphics/gplv3-with-text-84x42.png"></a></p>
+            
+        </footer>
+</body>
+</html>

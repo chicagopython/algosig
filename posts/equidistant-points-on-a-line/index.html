@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html prefix="            og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Equidistant Points on a Line | AlgoSig</title>
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#18354c">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://chicagopython.github.io/algosig/posts/equidistant-points-on-a-line/">
+<link rel="icon" href="../../favicon.ico" sizes="16x16">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#1f91c2">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#cceeff">
+<!-- favicons generated using http://realfavicongenerator.net/ --><!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<meta name="author" content="Chris Luedtke">
+<link rel="prev" href="../sudoku/" title="Sudoku" type="text/html">
+<link rel="next" href="../merge-sort/" title="Merge Sort" type="text/html">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+         
+    <header id="header" class="hidden-print"><nav id="menu"><a href="../../" title="AlgoSig" rel="home">
+        <img src="../../assets/img/chipy-chipmunk.png" alt="AlgoSig" id="logo" aria-hidden>
+          AlgoSig
+    </a>
+
+    <ul>
+<li><a href="../../categories/">Categories</a></li>
+                <li><a href="../../about/">About</a></li>
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="metadata">
+              <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/2019-06-27-equidistant-points-on-a-line.html">Comments</a>
+
+
+          
+
+        </p>
+</div>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Equidistant Points on a Line</a></h1>
+
+        <time datetime="2019-06-27T00:00:00-05:00" itemprop="datePublished">June 27, 2019</time>
+        by <a href="../../authors/chris-luedtke/">Chris Luedtke</a>
+        in <a href="../../categories/cat_algosig-5">AlgoSIG 5</a>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<h2>Challenge</h2>
+<p>Given a polyline defined by an ordered list of 2D coordinates, return a list of n equidistant coordinates on that polyline.</p>
+<p>Sample input:</p>
+<pre class="code literal-block"><span></span><span class="n">coords</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> <span class="p">(</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">4</span><span class="p">),</span> 
+    <span class="p">(</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> <span class="p">(</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> <span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> 
+    <span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">1</span><span class="p">)</span>
+<span class="p">]</span>
+</pre>
+
+
+<p><img class="img-fluid" src="../../assets/img/star.png"></p>
+<h2>Solution</h2>
+<pre class="code literal-block"><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+
+<span class="k">def</span> <span class="nf">point_dist</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+    <span class="sd">"""Distance between two points"""</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">p3_along_p1_p2</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">dist</span><span class="p">):</span>
+    <span class="sd">"""Returns (x, y) point at a given distance from p1 and along the </span>
+<span class="sd">    line created by p1 and p2</span>
+<span class="sd">    """</span>
+    <span class="n">dist_btw</span> <span class="o">=</span> <span class="n">point_dist</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
+    <span class="n">dist_ratio</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">/</span> <span class="n">dist_btw</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">dist_ratio</span><span class="p">)</span> <span class="o">*</span> <span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dist_ratio</span> <span class="o">*</span> <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">dist_ratio</span><span class="p">)</span> <span class="o">*</span> <span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dist_ratio</span> <span class="o">*</span> <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+
+<span class="k">def</span> <span class="nf">point_seq_length</span><span class="p">(</span><span class="n">coords</span><span class="p">):</span>
+    <span class="sd">"""Compute distance of sequential (x, y) list along a route"""</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">point_dist</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span> <span class="k">for</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">:])])</span>
+
+
+<span class="k">def</span> <span class="nf">equidist_pts_on_line</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">n_pts</span><span class="p">):</span>
+    <span class="sd">"""Equidistant points along route</span>
+
+<span class="sd">    coords: sequential (x, y) list along a route</span>
+<span class="sd">    returns: (eq_coords, segment_len)</span>
+<span class="sd">    """</span>
+    <span class="n">route_len</span> <span class="o">=</span> <span class="n">point_seq_length</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+    <span class="n">segment_len</span> <span class="o">=</span> <span class="n">route_len</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_pts</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">segment_len_remain</span> <span class="o">=</span> <span class="n">segment_len</span>
+
+    <span class="n">curr_p</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">eq_coords</span> <span class="o">=</span> <span class="p">[</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">]</span>  <span class="c1"># add the same first coordinate</span>
+    <span class="n">next_coord_idx</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">next_p</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="n">next_coord_idx</span><span class="p">]</span>
+        <span class="n">dist_to_next</span> <span class="o">=</span> <span class="n">point_dist</span><span class="p">(</span><span class="n">curr_p</span><span class="p">,</span> <span class="n">next_p</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">segment_len_remain</span> <span class="o">&gt;</span> <span class="n">dist_to_next</span><span class="p">:</span>
+            <span class="n">segment_len_remain</span> <span class="o">-=</span> <span class="n">dist_to_next</span>
+            <span class="n">curr_p</span> <span class="o">=</span> <span class="n">next_p</span>
+            <span class="n">next_coord_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># segment_len_remain &lt;= dist_to_next</span>
+            <span class="c1"># place an eq_coord segment_len_remain distance from curr_p</span>
+            <span class="c1">#  on the line created by curr_p and next_p</span>
+            <span class="n">eq_coord</span> <span class="o">=</span> <span class="n">p3_along_p1_p2</span><span class="p">(</span><span class="n">curr_p</span><span class="p">,</span> <span class="n">next_p</span><span class="p">,</span> <span class="n">segment_len_remain</span><span class="p">)</span>
+            <span class="n">eq_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eq_coord</span><span class="p">)</span>
+            <span class="n">curr_p</span> <span class="o">=</span> <span class="n">eq_coord</span>  <span class="c1"># update curr_p to our new point</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">eq_coords</span><span class="p">)</span> <span class="o">==</span> <span class="n">n_pts</span><span class="p">:</span>  <span class="c1"># solve condition</span>
+                <span class="k">break</span>
+
+            <span class="c1"># do not update next_coord_idx</span>
+
+            <span class="c1"># recompute these to reduce accumulated error</span>
+            <span class="n">route_len</span> <span class="o">=</span> <span class="n">point_seq_length</span><span class="p">([</span><span class="n">curr_p</span><span class="p">]</span> <span class="o">+</span> <span class="n">coords</span><span class="p">[</span><span class="n">next_coord_idx</span><span class="p">:])</span>
+            <span class="n">segment_len</span> <span class="o">=</span> <span class="n">route_len</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_pts</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">eq_coords</span><span class="p">))</span>
+            <span class="n">segment_len_remain</span> <span class="o">=</span> <span class="n">segment_len</span>
+
+    <span class="k">return</span> <span class="n">eq_coords</span>
+</pre>
+
+
+<p>Plot our solution with:</p>
+<pre class="code literal-block"><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'seaborn-whitegrid'</span><span class="p">)</span>
+
+<span class="n">coords</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> <span class="p">(</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">4</span><span class="p">),</span> 
+    <span class="p">(</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> <span class="p">(</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">1</span><span class="p">),</span> <span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> 
+    <span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">1</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">eq_coords</span> <span class="o">=</span> <span class="n">equidist_pts_on_line</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">],</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">],</span> <span class="s1">'o-'</span><span class="p">,</span> 
+        <span class="n">label</span><span class="o">=</span><span class="s1">'input'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">eq_coords</span><span class="p">],</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">eq_coords</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">,</span> 
+        <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'output'</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'Basic.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">);</span>
+</pre>
+</div>
+    </div>
+    <aside class="postpromonav"><div>
+    <span class="hidden-print">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></span>
+    <span class="hidden-print">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script><script type="IN/Share" data-url="https://chicagopython.github.io/algosig/posts/equidistant-points-on-a-line/"></script></span>
+    </div>
+    <nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cat_algosig-5/" rel="category"> AlgoSIG 5</a></li>
+      </ul>
+<ul class="pager hidden-print">
+<li>
+            <a href="../sudoku/" rel="prev" class="previous" title="Sudoku"><span aria-hidden="true">‹ </span>Older</a>
+        </li>
+        <li>
+            <a href="../merge-sort/" rel="next" class="next" title="Merge Sort">Newer<span aria-hidden="true"> ›</span></a>
+        </li>
+    </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="chicagopython-github-io",
+            disqus_url="https://chicagopython.github.io/algosig/posts/equidistant-points-on-a-line/",
+        disqus_title="Equidistant Points on a Line",
+        disqus_identifier="cache/posts/2019-06-27-equidistant-points-on-a-line.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="chicagopython-github-io";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></main><footer id="footer"><p class="light-sans">© Chicago Python User Group · Subscribe via <a href="../../rss.xml">RSS</a> · Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> · 
+<a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+<img alt="Gnu Public License version 3.0" style="border-width:0;" src="https://www.gnu.org/graphics/gplv3-with-text-84x42.png"></a></p>
+            
+        </footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+---
+title: Sudoku
+slug: sudoku
+date: 2019-06-06 00:00:00 UTC-05:00
+tags: 
+category: "AlgoSIG 4"
+link: https://leetcode.com/problems/sudoku-solve
+description:
+type: text
+author: "Chris Luedtke"
+---
+
+# Challenge
+
+> Write a program to solve any Sudoku puzzle by filling the empty cells.
+> In a sudoku solution, each digit 1-9 must occur exactly once in each row, each column, and in each of the 9 3x3 sub-boxes of the grid.
+
+Sample input:
+
+```python
+board = [
+    ['5', '3', '.', '.', '7', '.', '.', '.', '.'], 
+    ['6', '.', '.', '1', '9', '5', '.', '.', '.'], 
+    ['.', '9', '8', '.', '.', '.', '.', '6', '.'], 
+    ['8', '.', '.', '.', '6', '.', '.', '.', '3'], 
+    ['4', '.', '.', '8', '.', '3', '.', '.', '1'], 
+    ['7', '.', '.', '.', '2', '.', '.', '.', '6'], 
+    ['.', '6', '.', '.', '.', '.', '2', '8', '.'], 
+    ['.', '.', '.', '4', '1', '9', '.', '.', '5'], 
+    ['.', '.', '.', '.', '8', '.', '.', '7', '9']
+]
+```
+
+
+# Solution
+
+```python
+# check out https://en.wikipedia.org/wiki/Sudoku_solving_algorithms
+from typing import List
+
+
+def solve_sudoku(board: List[List[str]]) -> List[List[str]]:
+    # create a set of all values that may be placed
+    val_set = set([str(i) for i in range(1, 10)])
+
+    # create a dict of slot locations to fill
+    d = {} 
+    i = 0
+    for r_i in range(9):
+        for c_i in range(9):
+            if board[r_i][c_i] == '.':
+                d[i] = (r_i, c_i)
+                i += 1
+
+    # Iterate over slots, inserting numbers that are valid.
+    # If no valid number possible, backtrack to previous slot
+    #   and increment by 1
+    i = 0
+    while True:
+        # look up the current row/column slot location from the dict
+        r_i = d[i][0]
+        c_i = d[i][1]
+
+        # get set of numbers already used in row/col/box constraints
+        row_vals = set(board[r_i])
+        col_vals = set(board[i][c_i] for i in range(9))
+        b_r_i = r_i // 3 * 3
+        b_c_i = c_i // 3 * 3
+        box_vals = set(
+            board[b_r_i    ][b_c_i:b_c_i + 3] + 
+            board[b_r_i + 1][b_c_i:b_c_i + 3] + 
+            board[b_r_i + 2][b_c_i:b_c_i + 3]
+        )
+
+        # subtract already-used numbers from the set of all values
+        candidates = val_set - row_vals - col_vals - box_vals
+        # filter candidates to those greater than current placement
+        cur_val = board[r_i][c_i]
+        candidates = sorted(c for c in candidates if c > cur_val)
+
+        # backtrack if no valid candidates exist
+        if not candidates:  
+            board[r_i][c_i] = '.'
+            i -= 1
+            continue
+        # otherwise place the next greater candidate in the slot
+        else:
+            board[r_i][c_i] = candidates[0]
+            # board is solved if last empty slot is filled
+            if i == len(d) - 1:
+                return board
+            i += 1
+```
