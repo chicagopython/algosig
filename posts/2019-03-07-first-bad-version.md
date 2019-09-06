@@ -1,13 +1,13 @@
-<!--
-.. title: First Bad Version
-.. slug: first-bad-version
-.. date: 2019-03-31 00:00:00 UTC-05:00
-.. tags: array, binary-search
-.. category: 
-.. link: 
-.. description:
-.. type: text
--->
+---
+title: First Bad Version
+slug: first-bad-version
+date: 2019-03-07 00:00:00 UTC-05:00
+tags: array, binary-search
+category: AlgoSIG 1
+link: 
+description:
+type: text
+---
 
 # 1. Problem Link
 
@@ -28,4 +28,16 @@ This solution is for **Part 2**, solved without knowing the total number of vers
 
 Other solutions can be found on the LeetCode link above.
 
-{{% listing part2_without_n.py python linenumbers=True %}}
+```python
+def helper(left, right):
+    mid = int((right+left)/2)
+    if right <= left:
+        return left
+    if isBadVersion(mid):
+        return helper(left, mid)
+    else:
+        return helper(mid+1, right*2)
+    
+def firstBadVersion(n):
+    return helper(1,2)
+```

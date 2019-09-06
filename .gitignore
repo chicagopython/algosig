@@ -105,9 +105,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-
 # nikola
-.doit.db
-.doit.db.db
+.doit.*
 output
-
+nikola
+.vscode
