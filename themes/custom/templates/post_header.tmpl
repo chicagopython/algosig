@@ -40,8 +40,11 @@
         </div>
         ${html_title()}
         <time datetime="${post.formatted_date('webiso')}" itemprop="datePublished">${post.formatted_date(date_format)|h}</time>
+        % if post.meta('author'):
+        by <a href="${_link('author', post.meta('author'))}">${post.meta('author')|h}</a>
+        % endif
         % if post.meta('category'):
-        <a href="../../categories/cat_${post.meta('category').lower()|u}">${post.meta('category')|h}</a>
+        in <a href="../../categories/cat_${post.meta('category').lower().replace(' ', '-')|u}">${post.meta('category')|h}</a>
         % endif
         ${html_translations(post)}
     </header>
