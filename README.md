@@ -16,9 +16,6 @@ Algo SIG is Chipy's dedicated special interest group where we discuss and practi
 1. This creates a page under `posts` directory
 1. Edit the file created
 1. Build and verify locally `nikola build && nikola serve -b`
-1. Send a pull-request against the `src` branch
-
-# Deploy
-
-1. Checkout to `src` branch
-2. `nikola github_deplpy`
+1. Submit a pull-request against the `src` branch
+1. Run `nikola github_deploy`. This builds the website to your local `gh-pages` branch and pushes it to your fork on GitHub
+1. Submit a pull-request against the `gh-pages` branch
