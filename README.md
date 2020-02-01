@@ -1,8 +1,10 @@
 # Chicago Python Algorithms Special Interest Group
 
-## Development
+Algo SIG is a subgroup of [Chipy]((https://www.chipy.org/)), the Chicago Python Users Group.
 
-This site is designed for [GitHub Pages](https://pages.github.com/), which is built with [Jekyll](https://jekyllrb.com/), a [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems). *No local setup is required*. Simply create a [markdown file](https://guides.github.com/features/mastering-markdown/) in `./_posts/`, and that document will be rendered on the hosted website. See [Jekyll's documentation on Posts](https://jekyllrb.com/docs/posts/).
+# How to add new content
+
+This site is designed for [GitHub Pages](https://pages.github.com/), which is built with [Jekyll](https://jekyllrb.com/). *No local setup is required*. Simply create a new [markdown file](https://guides.github.com/features/mastering-markdown/) in `./_posts/`, and submit a pull request. Upon approval, it will be rendered on the hosted website. See existing posts for header variables to include.
 
 ## Local Development
 
