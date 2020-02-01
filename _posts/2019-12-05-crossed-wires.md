@@ -1,12 +1,9 @@
 ---
-title: Valid Anagram
-slug: valid-anagram
-date: 2019-09-05 00:00:00 UTC-05:00
-tags: Dynamic programming
+title: Crossed Wires
 category: AlgoSIG 1
-link: 
+link:
 description:
-type: text
+tags: Dynamic programming
 ---
 
 # 1. Problem Link
@@ -169,5 +166,5 @@ print(min([get_distance(ex, ORIGIN) for ex in exes]))
 
 print('\nPart 2')
 print(min([find_steps(ex, wires) for ex in exes]))
-    
+
 ```

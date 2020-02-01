@@ -1,11 +1,8 @@
 ---
 title: Valid Anagram
-slug: valid-anagram
-date: 2019-09-05 00:00:00 UTC-05:00
 tags: array
 category: AlgoSIG 1
-link: 
-description:
+link:
 type: text
 ---
 

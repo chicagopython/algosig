@@ -1,12 +1,8 @@
 ---
-title: Valid Anagram
-slug: valid-anagram
-date: 2019-09-05 00:00:00 UTC-05:00
-tags: Dynamic programming
+title: Random Sample from Linked List
 category: AlgoSIG 1
-link: 
-description:
-type: text
+link:
+tags: Dynamic programming
 ---
 
 # 1. Problem Link
