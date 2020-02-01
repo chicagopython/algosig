@@ -1,6 +1,6 @@
 # Chicago Python Algorithms Special Interest Group
 
-Algo SIG is a subgroup of [Chipy]((https://www.chipy.org/)), the Chicago Python Users Group.
+Algo SIG is a subgroup of [ChiPy](https://www.chipy.org/), the Chicago Python Users Group.
 
 # How to add new content
 
