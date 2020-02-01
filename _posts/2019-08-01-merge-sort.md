@@ -1,7 +1,8 @@
 ---
 title: Merge Sort
-category: "AlgoSIG 6"
-author: "Chris Luedtke"
+category: AlgoSIG 6
+link:
+author: Chris Luedtke
 tags:
 ---
 

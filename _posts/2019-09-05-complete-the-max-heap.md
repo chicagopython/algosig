@@ -1,7 +1,8 @@
 ---
 title: Complete the Max Heap
-category: "AlgoSIG 7"
-author: "Chris Luedtke"
+category: AlgoSIG 7
+link:
+author: Chris Luedtke
 tags:
 ---
 

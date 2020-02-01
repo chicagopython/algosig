@@ -1,13 +1,9 @@
 ---
 title: Bitwise and 3-tuples
-slug: bitwise-and-3-tuples
-date: 2019-05-02 00:00:00 UTC-05:00
-tags: 
-category: "AlgoSIG 3"
+category: AlgoSIG 3
 link: https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/
-description:
-type: text
-author: "Kevin Nasto"
+author: Kevin Nasto
+tags:
 ---
 
 # Description

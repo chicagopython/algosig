@@ -1,8 +1,8 @@
 ---
 title: Remove Duplicates from Sorted Array
-category: "AlgoSIG 9"
+category: AlgoSIG 9
 link: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
-author: "Chris Luedtke"
+author: Chris Luedtke
 tags:
 ---
 
