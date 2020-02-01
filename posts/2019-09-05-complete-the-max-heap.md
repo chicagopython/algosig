@@ -1,20 +1,15 @@
 ---
 title: Complete the Max Heap
-slug: complete-the-max-heap
-date: 2019-09-05 00:00:00 UTC-05:00
-tags: 
 category: "AlgoSIG 7"
-link: 
-description:
-type: text
 author: "Chris Luedtke"
+tags:
 ---
 
 # Description
 
 Given a partial object representation of a **Max Heap** (below), complete the `insert` and `delete` methods.
 
-**Max Heap** are binary tree data structures implemented as an array. 
+**Max Heap** are binary tree data structures implemented as an array.
 
 1. each node is greater than each of its children
 1. the tree is balanced
