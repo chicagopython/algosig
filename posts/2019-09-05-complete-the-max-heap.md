@@ -1,13 +1,8 @@
 ---
 title: Complete the Max Heap
-slug: complete-the-max-heap
-date: 2019-09-05 00:00:00 UTC-05:00
-tags:
 category: "AlgoSIG 7"
-link:
-description:
-type: text
 author: "Chris Luedtke"
+tags:
 ---
 
 # Description

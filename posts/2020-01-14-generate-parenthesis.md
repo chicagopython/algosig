@@ -1,13 +1,9 @@
 ---
 title: Generate Parentheses
-slug: generate-parentheses
-date: 2020-01-14
-tags:
 category: "AlgoSIG 11"
 link: https://leetcode.com/problems/generate-parentheses/
-description:
-type: text
 author: "Chris Luedtke"
+tags:
 ---
 
 # Description

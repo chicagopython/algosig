@@ -1,13 +1,8 @@
 ---
 title: Time Planner
-slug: time-planner
-date: 2019-04-04 00:00:00 UTC-05:00
-tags: array, python-101
 category: "AlgoSIG 2"
-link: 
-description:
-type: text
 author: "Chris Luedtke"
+tags: array, python-101
 ---
 
 # Description
