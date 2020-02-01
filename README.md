@@ -2,7 +2,7 @@
 
 Algo SIG is a subgroup of [ChiPy](https://www.chipy.org/), the Chicago Python Users Group.
 
-# How to add new content
+## How to add new content
 
 This site is designed for [GitHub Pages](https://pages.github.com/), which is built with [Jekyll](https://jekyllrb.com/). *No local setup is required*. Simply create a new [markdown file](https://guides.github.com/features/mastering-markdown/) in `./_posts/`, and submit a pull request. Upon approval, it will be rendered on the hosted website. See existing posts for header variables to include.
 
