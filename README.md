@@ -62,9 +62,3 @@ Follow the [appropriate guide for your system](https://jekyllrb.com/docs/install
     ```
     rougify style github > assets/css/syntax.css
     ```
-
-## Theme Credits
-
-Created from: [BlackrockDigital/startbootstrap-clean-blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog)
-
-Template link: [startbootstrap.com/template-overviews/clean-blog](https://startbootstrap.com/template-overviews/clean-blog)
