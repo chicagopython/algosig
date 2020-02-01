@@ -1,24 +1,68 @@
-# Algosig
+# Chicago Python Algorithms Special Interest Group
 
-Algo SIG is Chipy's dedicated special interest group where we discuss and practice all things algorithms.
+## Development
 
-# How to add new content
+This site is designed for [GitHub Pages](https://pages.github.com/), which is built with [Jekyll](https://jekyllrb.com/), a [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems). *No local setup is required*. Simply create a [markdown file](https://guides.github.com/features/mastering-markdown/) in `./_posts/`, and that document will be rendered on the hosted website. See [Jekyll's documentation on Posts](https://jekyllrb.com/docs/posts/).
 
-1. Fork the repository and clone your fork to your local computer
-1. Checkout to src branch `git checkout src`
-1. Create a virtual environment `python -m venv venv`
-1. Activate the virtual environment
-    * Linux: `source venv/bin/activate`
-    * Windows: `venv\Scripts\activate`
-1. Ensure `pip` up to date `pip install --upgrade pip`
-1. Install requirements `pip install -r requirements.txt`
-1. Create a new page `nikola new_post -t "Longest Palindromic Substring"`
-1. This creates a page under `posts` directory
-1. Edit the file created
-1. Build and verify locally `nikola build && nikola serve -b`
-1. Send a pull-request against the `src` branch
+## Local Development
 
-# Deploy
+In order to make changes to the website design or archictecture and preview the website on a local server, you will need a local development evironment. Follow these steps.
 
-1. Checkout to `src` branch
-2. `nikola github_deplpy`
+### Local Jekyll Setup
+
+Follow the [appropriate guide for your system](https://jekyllrb.com/docs/installation/). Specific notes for Windows are provided here.
+
+#### Windows 10 with WSL
+
+1. [Install WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and Ubuntu from the Microsoft Store
+2. Followed the [WSL Jekyll installation guide](https://jekyllrb.com/docs/installation/windows/#installation-via-bash-on-windows-10)
+3. If you receive a permission error at `gem update` or `gem install jekyll bundler`, modify your `.bashrc`:
+    ```bash
+    nano ~/.bashrc
+    ```
+
+    `.bashrc` is located at `C:\Users\{USER}\AppData\Local\Packages\{UBUNTU_DIST}\LocalState\rootfs\home\{UBUNTU_USER}\.bashrc`
+
+    Add the following lines (see: [Running Jekyll as Non-Superuser (no sudo!)](https://jekyllrb.com/docs/troubleshooting/#no-sudo):
+    ```
+    # Ruby exports
+
+    export GEM_HOME=$HOME/gems
+    export PATH=$HOME/gems/bin:$PATH
+    ```
+
+    Restart the terminal, or reload `.bashrc`:
+    ```bash
+    . ~/.bashrc
+    ```
+
+    Resume the [WSL Jekyll installation guide](https://jekyllrb.com/docs/installation/windows/#installation-via-bash-on-windows-10).
+
+### Local GitHub Pages Setup
+
+1. Prior to `bundle install` below, I had to issue these commands (see [this guide](https://garfbradaz.github.io/blog/2018/12/12/Setting-up-Github-Pages-Jekyll-and-using-Windows-Subsystem-for-Linux.html))
+    ```
+    sudo apt-get install libpng-dev
+    sudo apt-get install --reinstall zlibc zlib1g zlib1g-dev
+    ```
+2. Install dependencies specified in this repo's [`GemFile`](GemFile)
+    ```
+    bundle install
+    ```
+3. Boot the local server
+    ```
+    bundle exec jekyll serve
+    ```
+
+### Miscellaneous
+
+* Syntax styling/highlighting for code blocks was configured via:
+    ```
+    rougify style github > assets/css/syntax.css
+    ```
+
+## Theme Credits
+
+Created from: [BlackrockDigital/startbootstrap-clean-blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog)
+
+Template link: [startbootstrap.com/template-overviews/clean-blog](https://startbootstrap.com/template-overviews/clean-blog)
