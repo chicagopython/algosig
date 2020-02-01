@@ -1,16 +1,12 @@
 ---
 title: Implement a Prefix Tree (Trie)
-slug: implement-a-prefix-tree-trie
-date: 2019-04-04 00:00:00 UTC-05:00
+category: AlgoSIG 2
+link:
+author: Kevin Nasto
 tags: trie, tree, autocomplete
-category: "AlgoSIG 2"
-link: 
-description: 
-type: text
-author: "Kevin Nasto"
 ---
 
-<img src="/assets/img/trie.png">
+<img src="{{ '/assets/img/trie.png' | relative_url }}">
 
 # Description
 
@@ -44,7 +40,7 @@ class Trie:
                 node.children[letter] = Node(letter)
             node = node.children[letter]
         node.end = word
-        
+
     def search(self, word):
         node = self.root
         for letter in word:
@@ -95,7 +91,7 @@ class Trie:
 
     def __init__(self):
        self.root = {}
-        
+
     def insert(self, word):
         node = self.root
         for letter in word:
@@ -103,7 +99,7 @@ class Trie:
                 node[letter] = {}
             node = node[letter]
         node['$'] = {} # End of word
-        
+
     def search(self, word):
         node = self.root
         for letter in word:
@@ -115,7 +111,7 @@ class Trie:
             return True
         else:
             return False
-        
+
     def startsWith(self, prefix):
         node = self.root
         for letter in prefix:

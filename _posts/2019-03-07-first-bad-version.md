@@ -1,12 +1,9 @@
 ---
 title: First Bad Version
-slug: first-bad-version
-date: 2019-03-07 00:00:00 UTC-05:00
-tags: array, binary-search
 category: AlgoSIG 1
-link: 
-description:
-type: text
+link:
+author:
+tags: array, binary-search
 ---
 
 # 1. Problem Link
@@ -20,7 +17,7 @@ You have *n* versions *1,2,3,...,n* and you want to find the first one that brok
 
 You are given a function `isBadVersion(version)` which will return `True` if the version is greater or equal to first broken version. Otherwise it return `False`.
 
-**Part 2** of this problem (not shown on LeetCode) is to solve without knowing in advance how many versions *n* you have to check. 
+**Part 2** of this problem (not shown on LeetCode) is to solve without knowing in advance how many versions *n* you have to check.
 
 # 3. Problem Solution
 
@@ -37,7 +34,7 @@ def helper(left, right):
         return helper(left, mid)
     else:
         return helper(mid+1, right*2)
-    
+
 def firstBadVersion(n):
     return helper(1,2)
 ```

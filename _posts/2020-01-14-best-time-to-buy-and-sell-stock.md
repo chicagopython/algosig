@@ -1,12 +1,9 @@
 ---
-title: Best Time to Buy and Sell Stock 
-slug: stocks, best-time, sell-stock, buy-stock
-date: 2020-01-14 00:00:00 UTC-05:00
-tags: Greedy
+title: Best Time to Buy and Sell Stock
 category: AlgoSIG 1
-link: 
-description:
-type: text
+link:
+author:
+tags: Greedy
 ---
 
 # 1. Problem Link
@@ -44,29 +41,29 @@ Other solutions can be found on the LeetCode link above.
 def get_max_profit(stock_prices):
     if len(stock_prices) < 2:
         raise ValueError('Getting a profit requires at least 2 prices')
-   
+
     min_price = stock_prices[0]
     max_profit = stock_prices[1] - stock_prices[0]
-    
+
     print(f'ITERATION 0: \n MIN_PRICE: {min_price} \n MAX_PROFIT: {max_profit}')
-    
+
     iteration = 1
-    
+
     for current_time in range(1, len(stock_prices)):
-        
+
         print(f'ITERATION {iteration} -------------------------------------------')
         current_price = stock_prices[current_time]
         potential_profit = current_price - min_price
-        
+
         print(
             f'CURRENT_PRICE: {current_price} \n POTENTIAL_PROFIT: {potential_profit}')
         max_profit = max(max_profit, potential_profit)
         min_price = min(min_price, current_price)
-        
+
         print(
             f'MIN_PRICE: {min_price} \n MAX_PROFIT: {max_profit}')
         iteration += 1
-    
+
     return max_profit
 
 prices = [10, 7, 5, 8, 11, 9]

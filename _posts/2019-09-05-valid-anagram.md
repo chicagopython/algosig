@@ -1,9 +1,9 @@
 ---
 title: Valid Anagram
-tags: array
 category: AlgoSIG 1
 link:
-type: text
+author:
+tags: array
 ---
 
 # 1. Problem Link

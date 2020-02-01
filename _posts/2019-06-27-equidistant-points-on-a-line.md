@@ -1,7 +1,8 @@
 ---
 title: Equidistant Points on a Line
-category: "AlgoSIG 5"
-author: "Chris Luedtke"
+category: AlgoSIG 5
+link:
+author: Chris Luedtke
 tags:
 ---
 
@@ -20,7 +21,7 @@ coords = [
 ]
 ```
 
-<img class="img-fluid" src="/assets/img/star.png">
+<img class="img-fluid" src="{{ '/assets/img/star.png' | relative_url }}>
 
 # Solution
 

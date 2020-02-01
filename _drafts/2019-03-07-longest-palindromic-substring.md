@@ -1,13 +1,10 @@
 ---
 title: Longest Palindromic Substring
-slug: longest-palindromic-substring
-date: 2019-03-07 22:47:50 UTC-05:00
-tags: array, string
 category: AlgoSIG 1
-link: 
-description: 
+link:
 type: text
 status: draft
+tags: array, string
 ---
 
 # 1. Problem Link

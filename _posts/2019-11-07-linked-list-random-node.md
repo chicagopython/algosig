@@ -2,6 +2,7 @@
 title: Random Sample from Linked List
 category: AlgoSIG 1
 link:
+author:
 tags: Dynamic programming
 ---
 

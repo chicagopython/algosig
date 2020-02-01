@@ -1,8 +1,8 @@
 ---
 title: Generate Parentheses
-category: "AlgoSIG 11"
+category: AlgoSIG 11
 link: https://leetcode.com/problems/generate-parentheses/
-author: "Chris Luedtke"
+author: Chris Luedtke
 tags:
 ---
 

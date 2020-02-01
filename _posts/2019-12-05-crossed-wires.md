@@ -1,8 +1,8 @@
 ---
 title: Crossed Wires
-category: AlgoSIG 1
+category: AlgoSIG 10
 link:
-description:
+author: Kevin Nasto
 tags: Dynamic programming
 ---
 

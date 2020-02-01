@@ -1,12 +1,9 @@
 ---
 title: Longest Common Subsequence
-slug: longest-common-subsequence
-date: 2019-10-03 00:00:00 UTC-05:00
-tags: Dynamic programming
 category: AlgoSIG 1
-link: 
-description:
-type: text
+link:
+author:
+tags: Dynamic programming
 ---
 
 # 1. Problem Link
