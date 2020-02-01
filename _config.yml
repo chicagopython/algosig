@@ -19,13 +19,11 @@
 # in the templates via {{ site.myvariable }}.
 
 title: ChiPy Algorithms Special Interest Group
-email: your-email@example.com
+email: chicago-sig-organizers@python.org
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+  Algo SIG is ChiPy's special interest group where we discuss and practice all things algorithms.
+baseurl: "/algosig" # the subpath of your site, e.g. /blog
+url: "https://chicagopython.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ChicagoPython
 github_username:  chicagopython
 
@@ -33,6 +31,12 @@ github_username:  chicagopython
 theme: minima
 plugins:
   - jekyll-feed
+
+defaults:
+  - scope:
+      path: "_assets/img"
+    values:
+      image: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
