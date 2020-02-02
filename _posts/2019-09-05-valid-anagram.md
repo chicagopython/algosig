@@ -3,7 +3,8 @@ title: Valid Anagram
 category: AlgoSIG 1
 link:
 author:
-tags: array
+tags:
+  - array
 ---
 
 # 1. Problem Link

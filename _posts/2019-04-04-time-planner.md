@@ -3,7 +3,9 @@ title: Time Planner
 category: AlgoSIG 2
 link:
 author: Chris Luedtke
-tags: array, python-101
+tags:
+  - array
+  - python-101
 ---
 
 # Description

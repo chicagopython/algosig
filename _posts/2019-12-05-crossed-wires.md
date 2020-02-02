@@ -3,7 +3,8 @@ title: Crossed Wires
 category: AlgoSIG 10
 link:
 author: Kevin Nasto
-tags: Dynamic programming
+tags:
+  - Dynamic programming
 ---
 
 # 1. Problem Link
