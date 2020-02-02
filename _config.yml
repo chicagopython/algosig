@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: ChiPy Algorithms Special Interest Group
+title: ChiPy Algorithms SIG
 email: chicago-sig-organizers@python.org
 description: >- # this means to ignore newlines until "baseurl:"
   Algo SIG is ChiPy's special interest group where we discuss and practice all things algorithms.
@@ -28,9 +28,30 @@ twitter_username: ChicagoPython
 github_username:  chicagopython
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
+
+theme: minima
+
+header_pages:
+  - name: About
+    path: about.md
+    icon: fa fa-book
+  - name: Contribute
+    path: contribute.md
+    icon:
+  - name: Connect
+    icon: fa fa-users
+    dropdown:
+      - name: GitHub
+        link: https://github.com/chicagopython
+        icon: fa fa-github
+      - name: Twitter
+        link: https://twitter.com/ChicagoPython
+        icon: fa fa-twitter
+      - name: Email
+        link: mailto:chicago-sig-organizers@python.org
+        icon: fa fa-envelope
 
 # Exclude from processing.
 # The following items will not be processed, by default.
