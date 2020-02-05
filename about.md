@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-# Chipy Algorithms Special Interest Group (AlgoSIG)
+## Chipy Algorithms Special Interest Group (AlgoSIG)
 
 The Algorithms Special Interest Group invites attendees of all skill levels to stretch their problem solving abilities with Python. Participants attend our events to learn efficient programming, structured problem solving, and beautiful Python syntax. While some people attend this event in preparation for an upcoming interview to advance their career, others simply enjoy the challenge, learning new tricks, and building a Python community in Chicago.
 

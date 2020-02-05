@@ -24,7 +24,7 @@ theme: minima
 header_pages:
   - name: About
     path: about.md
-    icon: fa fa-book
+    icon: fa fa-info-circle
   - name: Contribute
     path: contribute.md
     icon: fa fa-code-fork

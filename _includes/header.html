@@ -1,27 +1,13 @@
-<!-- <script type="text/javascript">
-$(document).ready(function() {
-  // Transition effect for navbar 
-  $(window).scroll(function() {
-    // checks if window is scrolled more than 500px, adds/removes solid class
-    if($(this).scrollTop() > 100) { 
-      $('.navbar').addClass('navbar-solid');
-    } else {
-      $('.navbar').removeClass('navbar-solid');
-    }
-  });
-});
-</script> -->
-
 <header>
   <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-primary" id="mainNav">
     <div class="container">
-      <a class="navbar-brand mb-0 h1" href="{{ '/' | relative_url }}">
+      <a class="navbar-brand" href="{{ '/' | relative_url }}">
         {%- if site.title -%}
         {{ site.title | escape }}
         {%- endif -%}
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars"></i>
+        <i class="fa fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse text-right" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">

@@ -56,3 +56,12 @@ bundle install
 ```
 bundle exec jekyll serve
 ```
+
+## Miscellaneous
+* Syntax styling/highlighting theme for code blocks was set via:
+    ```
+    rougify style github > assets/syntax.css
+    ```
+
+## Theme Credits
+[Boostrap](https://getbootstrap.com/) with [Bootswatch](https://bootswatch.com/) theme.
