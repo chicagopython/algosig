@@ -3,7 +3,8 @@ title: Best Time to Buy and Sell Stock
 category: AlgoSIG 1
 link:
 author:
-tags: Greedy
+tags:
+  - Greedy
 ---
 
 # 1. Problem Link

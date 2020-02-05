@@ -3,7 +3,8 @@ title: Random Sample from Linked List
 category: AlgoSIG 1
 link:
 author:
-tags: Dynamic programming
+tags:
+  - Dynamic programming
 ---
 
 # 1. Problem Link

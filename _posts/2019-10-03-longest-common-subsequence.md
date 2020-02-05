@@ -3,7 +3,8 @@ title: Longest Common Subsequence
 category: AlgoSIG 1
 link:
 author:
-tags: Dynamic programming
+tags:
+  - Dynamic programming
 ---
 
 # 1. Problem Link

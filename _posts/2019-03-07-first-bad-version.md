@@ -3,7 +3,9 @@ title: First Bad Version
 category: AlgoSIG 1
 link:
 author:
-tags: array, binary-search
+tags:
+  - array
+  - binary-search
 ---
 
 # 1. Problem Link
