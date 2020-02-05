@@ -1,4 +1,4 @@
 ---
 layout: home
-list_title: Code Challenges
+list_title: Past Code Challenges
 ---

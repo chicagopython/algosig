@@ -1,0 +1,101 @@
+/** Basic styling */
+body {
+    font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.navbar {
+    padding: 0.6rem 1rem;
+}
+
+.navbar i {
+    padding-right: 0.15rem;
+}
+
+.jumbotron {
+    padding: 2rem 4rem 2rem
+}
+
+.jumbotron img {
+    width: 90%;
+    max-width: 22rem;
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+.post-listing {
+    margin-bottom: 30px;
+}
+
+.post-listing a {
+    color: white;
+}
+.post-listing a:hover { color: #F6127D !important;}
+
+.post-listing a:hover, a:visited, a:active { text-decoration: none;}
+
+/** Set `margin-bottom` to maintain vertical rhythm */
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; }
+
+/** `main` element */
+main {
+    display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+/** Images */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/** Figures */
+figure > img { display: block; }
+
+figcaption { font-size: 14px; }
+
+/** Lists */
+ul, ol { margin-left: 30px; }
+
+li > ul, li > ol { margin-bottom: 0; }
+
+/** Headings */
+h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+
+/** Site footer */
+.footer {
+    font-size:0.95rem;
+}
+
+.footer a {
+    color: inherit;
+}
+
+/** Code formatting */
+pre, code {
+    font-size: 15px;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+}
+
+pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
