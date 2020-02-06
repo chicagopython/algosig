@@ -33,7 +33,7 @@ layout: default
       <h3>{{ page.list_title }}</h3>
       {%- endif -%}
       
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <div class="post-listing">
         <a href="{{ post.url | relative_url }}">

@@ -19,8 +19,6 @@ github_username:  chicagopython
 plugins:
   - jekyll-feed
 
-theme: minima
-
 header_pages:
   - name: About
     path: about.md
