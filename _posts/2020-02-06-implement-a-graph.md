@@ -1,6 +1,6 @@
 ---
-title: Merge Two Sorted Linked Lists
-link: https://leetcode.com/problems/merge-two-sorted-lists/
+title: Implement A Graph
+link: 
 author: 
 tags:
   - sorting
@@ -9,18 +9,10 @@ tags:
 
 ## Description
 
-Merge two sorted linked lists and return the first node of the merged list. The new list should be made by splicing together the nodes of the first two lists.
+1. Introduction on graphs
+1. Implement a graph with Python classes
+1. Understand DFS vs BFS
+1. Implement DFS and BFS methods
 
-```python
-# Definition for singly-linked list node
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
-# Function Inputs
-* first node of list 1
-* first node of list 2
-```
 
 ## Solution
