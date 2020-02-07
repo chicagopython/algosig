@@ -1,26 +1,31 @@
 ---
-title: Merge Two Sorted Linked Lists
-link: https://leetcode.com/problems/merge-two-sorted-lists/
+title: Asteroids In Sight
+link: https://adventofcode.com/2019/day/10
 author: 
 tags:
-  - sorting
-  - linked list
+  - grids
+  - math
 ---
 
 ## Description
 
-Merge two sorted linked lists and return the first node of the merged list. The new list should be made by splicing together the nodes of the first two lists.
+Find the asteroid (denoted by #) that has the maximum number of other asteroids in its “line of sight”. Below, the highlighted asteroid is the answer with eight in sight. The top left one is blocked, but all others are in its sight. Notice the top right asteroid is in sight. Hint: Find the slope or angle.
 
-```python
-# Definition for singly-linked list node
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+```
+.#..#
+.....
+#####
+....#
+...##
+```
 
-# Function Inputs
-* first node of list 1
-* first node of list 2
+The following denotes how many asteroids are visible at each location.
+
+.7..7
+.....
+67775
+....7
+...87
 ```
 
 ## Solution
