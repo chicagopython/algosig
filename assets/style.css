@@ -42,6 +42,16 @@ body {
 
 .post-listing a:hover, a:visited, a:active { text-decoration: none;}
 
+.post-img {
+    background-color: white;
+    padding: 5px;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}
+
 /** Set `margin-bottom` to maintain vertical rhythm */
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; }
 
