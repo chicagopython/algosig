@@ -21,6 +21,7 @@ Find the asteroid (denoted by #) that has the maximum number of other asteroids 
 
 The following denotes how many asteroids are visible at each location.
 
+```
 .7..7
 .....
 67775
