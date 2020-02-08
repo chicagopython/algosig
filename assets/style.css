@@ -7,8 +7,8 @@ body {
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
-    display: flex;
     min-height: 100vh;
+    display: flex;
     flex-direction: column;
 }
 
@@ -62,23 +62,7 @@ main {
     padding-bottom: 60px;
 }
 
-/** Images */
-img {
-    max-width: 100%;
-    vertical-align: middle;
-}
-
-/** Figures */
-figure > img { display: block; }
-
-figcaption { font-size: 14px; }
-
-/** Lists */
-ul, ol { margin-left: 30px; }
-
-li > ul, li > ol { margin-bottom: 0; }
-
-/** Headings */
+/* * Headings */
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 /** Site footer */
@@ -105,7 +89,10 @@ pre {
 }
 
 pre > code {
-    border: 0;
     padding-right: 0;
     padding-left: 0;
+}
+
+.highlight {
+    border-radius: 0.3rem;
 }
