@@ -8,12 +8,21 @@ layout: default
       <h1 class="post-title">{{ page.title | escape }}</h1>
       <!-- <div class="container"> -->
         <div class="row">
-          <div class="col-sm-9">
+          <div class="col-sm-5">
             {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
             <span class="text-muted">{{ page.date | date: date_format }}{% if page.author %} by {{ page.author | escape }}{% endif %}</span class="text-muted">
           </div>
           <div class="col">
-            <a class="btn btn-outline-primary btn-sm text-nowrap" href="https://github.com/{{site.github_username}}{{site.baseurl}}/edit/master/{{page.path}}" role="button">Edit Page</a>
+            <div class="btn-group btn-group-toggle float-md-right" data-toggle="buttons">
+              <a class="btn btn-outline-primary btn-sm text-nowrap" href="https://github.com/{{site.github_username}}{{site.baseurl}}/edit/master/{{page.path}}" role="button">
+                <i class="fa fa-pencil"></i> Edit Page
+              </a>
+              {% if page.link %}
+              <a class="btn btn-outline-primary btn-sm text-nowrap" href="{{ page.link }}" role="button">
+                <i class="fa fa-link"></i> Problem Source
+              </a>
+              {% endif %}
+            </div>
           </div>
         </div>
       <!-- </div> -->
