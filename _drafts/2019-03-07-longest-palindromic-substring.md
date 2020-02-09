@@ -1,14 +1,12 @@
 ---
 title: Longest Palindromic Substring
 category: AlgoSIG 1
-link:
-type: text
-status: draft
-tags: array, string
+link: https://leetcode.com/problems/longest-palindromic-substring/
+tags:
+  - array
+  - string
 ---
 
-# 1. Problem Link
+## Description
 
-The problem can be found [here](https://leetcode.com/problems/longest-palindromic-substring/)
-
-# 2. Problem Solution
+## Solution

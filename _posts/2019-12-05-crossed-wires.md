@@ -1,18 +1,13 @@
 ---
-title: Crossed Wires
+title: Crossed Wires (Advent of Code Day 3)
 category: AlgoSIG 10
-link:
+link: https://adventofcode.com/2019/day/3
 author: Kevin Nasto
 tags:
   - Dynamic programming
 ---
 
-# 1. Problem Link
-
-The problem can be found [here](https://adventofcode.com/2019/day/3)
-
-
-# 2. Problem Description
+## Description
 
 Given a list of wires that _cross_ (intersect), find the closest intersection point to start of the wire. All wires start at the same point. A wire CANNOT intersect with itself. A wire is defined by a string in a file representing steps. See link for description of PART 2.
 
@@ -48,8 +43,7 @@ R8,U5,L5,D3
 U7,R6,D4,L4
 ```
 
-# 3. Problem Solution
-
+## Solution
 
 Other solutions can be found on the LeetCode link above.
 

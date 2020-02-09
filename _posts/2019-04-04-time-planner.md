@@ -8,7 +8,7 @@ tags:
   - python-101
 ---
 
-# Description
+## Description
 
 Implement a time planner that receives the availability of two people, a and b, and a duration, dur. Return the earliest time slot in which both people can meet. If no satisfactory time exists, return None.
 
@@ -23,7 +23,7 @@ dur = 8
 >>> (60, 68)
 ```
 
-# Solution 1: `O(n^2)`
+## Solution 1: `O(n^2)`
 
 ```python
 def time_planner(a, b, dur):
@@ -39,7 +39,7 @@ def time_planner(a, b, dur):
   return None
 ```
 
-# Solution 2: `O(n)`
+## Solution 2: `O(n)`
 
 ```python
 def time_planner(a, b, dur):

@@ -6,7 +6,7 @@ author: Chris Luedtke
 tags:
 ---
 
-# Challenge
+## Description
 
 Given a polyline defined by an ordered list of 2D coordinates, return a list of n equidistant coordinates on that polyline.
 
@@ -23,7 +23,7 @@ coords = [
 
 <img class="img-fluid" src="{{ '/assets/img/star.png' | relative_url }}">
 
-# Solution
+## Solution
 
 ```python
 import math

@@ -6,7 +6,8 @@ author: Kevin Nasto
 tags:
 ---
 
-# Description
+## Description
+
 Given an array of numbers, `A`, find the number of 3-tuples `(i, j, k)` indices in `A`, where the bitwise AND is equal to `0`. Assume the numbers in `A` are between 0 and 2^16.
 
 ```
@@ -22,7 +23,7 @@ Input: arr = [1,2,3]
 Output: 12
 ```
 
-# Solution
+## Solution
 
 ```python
 import collections

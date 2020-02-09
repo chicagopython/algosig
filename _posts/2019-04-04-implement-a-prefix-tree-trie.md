@@ -1,22 +1,20 @@
 ---
 title: Implement a Prefix Tree (Trie)
 category: AlgoSIG 2
-link:
+link: https://leetcode.com/problems/implement-trie-prefix-tree/
 author: Kevin Nasto
 tags: trie, tree, autocomplete
 ---
 
 <img src="{{ '/assets/img/trie.png' | relative_url }}">
 
-# Description
-
-The problem can be found [here](https://leetcode.com/problems/implement-trie-prefix-tree/)
+## Description
 
 Implement a trie (prefix tree) with `insert`, `search`, and `startsWith` methods. Tries are used in many applications such as spell checking, autocompletion, and ip routing.
 
 *Part 2* of this problem (not shown on LeetCode) is to implement an `autoComplete` method.
 
-# Solution 1: Using Node Class and Storing Entire Word at Leaf
+## Solution 1: Using Node Class and Storing Entire Word at Leaf
 
 This solution uses a `Node` class which makes things easier to keep track of. Storing the entire word in the end of word seperator makes the implementation less tricky. However this unfortunetly causes the space complexity to be `O(n)` where `n` is the number of words.
 
@@ -82,7 +80,7 @@ def autocomplete_helper(node, words):
         autocomplete_helper(node, words)
 ```
 
-# Solution 2: Using Just Dictionary and End of Word Marker $
+## Solution 2: Using Just Dictionary and End of Word Marker $
 
 Since this only stores the letters, and not the entire word, the space complexity is much less.
 

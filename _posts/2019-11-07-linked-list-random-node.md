@@ -1,18 +1,13 @@
 ---
 title: Random Sample from Linked List
 category: AlgoSIG 1
-link:
+link: https://leetcode.com/problems/valid-anagram/
 author:
 tags:
   - Dynamic programming
 ---
 
-# 1. Problem Link
-
-The problem can be found [here](https://leetcode.com/problems/valid-anagram/)
-
-
-# 2. Problem Description
+## Description
 
 Given two sequences, *x[1:m]* and *y[1:n]*,
 find a longest sequence common to both. Uses memoization
@@ -28,9 +23,7 @@ The last letter of P and Q are the same
 CASE 2:
 The last letter of P and Q are different
 
-
-# 3. Problem Solution
-
+## Solution
 
 Other solutions can be found on the LeetCode link above.
 

@@ -6,7 +6,7 @@ author: Chris Luedtke
 tags:
 ---
 
-# Description
+## Description
 
 Given a partial object representation of a **Max Heap** (below), complete the `insert` and `delete` methods.
 
@@ -50,7 +50,7 @@ class MaxHeap:
         # TODO
 ```
 
-# Solution
+## Solution
 
 ```python
 class MaxHeap:

@@ -6,7 +6,7 @@ author: Chris Luedtke
 tags:
 ---
 
-# Description
+## Description
 
 Implement merge sort, an efficient "divide and conquer" approach to sorting.
 1. split the array in half
@@ -21,7 +21,7 @@ merge_sort([ 5, 4, 6, 2, 1,])
 >>> [1, 2, 4, 5, 6]
 ```
 
-# Solution
+## Solution
 
 ```python
 def merge(arr_a, arr_b):  # helper function

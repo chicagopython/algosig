@@ -1,18 +1,13 @@
 ---
 title: Longest Common Subsequence
 category: AlgoSIG 1
-link:
+link: https://leetcode.com/problems/longest-common-subsequence/
 author:
 tags:
   - Dynamic programming
 ---
 
-# 1. Problem Link
-
-The problem can be found [here](https://leetcode.com/problems/longest-common-subsequence/)
-
-
-# 2. Problem Description
+## Description
 
 Given two strings *text1* and *text2*, return the length of their longest common subsequence.
 
@@ -20,9 +15,7 @@ A subsequence of a string is a new string generated from the original string wit
 
 If there is no common subsequence, return `0`.
 
-
-# 3. Problem Solution
-
+## Solution
 
 Other solutions can be found on the LeetCode link above.
 

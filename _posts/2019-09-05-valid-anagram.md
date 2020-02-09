@@ -1,34 +1,31 @@
 ---
 title: Valid Anagram
 category: AlgoSIG 1
-link:
+link: https://leetcode.com/problems/valid-anagram/
 author:
 tags:
   - array
 ---
 
-# 1. Problem Link
-
-The problem can be found [here](https://leetcode.com/problems/valid-anagram/)
-
-
-# 2. Problem Description
+## Description
 
 Given two strings *s* and *t* , write a function to determine if *t* is an anagram of *s*.
 
 Example 1:
+```
 Input: *s* = “anagram”, *t* = “nagaram”
 Output = `True`
+```
 
 Example 2:
+```
 Input: *s* = “rat”, *t* = “car”
 Output = `False`
+```
 
 Assume string contains only lowercase letters
 
-
-# 3. Problem Solution
-
+## Solution
 
 Other solutions can be found on the LeetCode link above.
 
