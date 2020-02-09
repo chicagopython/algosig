@@ -57,7 +57,7 @@ while node:
 >>> 1 3 7
 ```
 
-And now we can approach our solution:
+And now we can approach our solution. This algorithm runs in `O(n)` time.
 
 ```python
 def merge_two_lists(l1: ListNode, l2: ListNode) -> ListNode:
