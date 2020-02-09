@@ -1,7 +1,7 @@
 ---
 title: Merge Two Sorted Linked Lists
 link: https://leetcode.com/problems/merge-two-sorted-lists/
-author:
+author: Chris Luedtke
 tags:
   - sorting
   - linked list
