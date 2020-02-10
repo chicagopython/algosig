@@ -19,10 +19,10 @@ Input File:
 ...##
 ```
 
-Below, the highlighted asteroid (denoted by `0`) is the answer with *eight* in sight. The top left one denote by `L` is blocked (by the asteroid denoted by `X`), but all others are in its sight. Notice the top right asteroid is in sight. Hint: Find the slope or angle.
+Below, the highlighted asteroid (denoted by `0`) is the answer with *eight* in sight. The top left one `L` is blocked (by the asteroid denoted by `X`), but all others are in its sight. Notice the top right asteroid is in sight. Hint: Find the slope or angle.
 
 ```
-.#..#
+.L..#
 .....
 ##X##
 ....#
