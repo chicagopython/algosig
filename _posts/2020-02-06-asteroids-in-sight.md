@@ -18,14 +18,14 @@ Find the asteroid (denoted by `#`) that has the maximum number of other asteroid
 ...##
 ```
 
-Below, the highlighted asteroid (denoted by `O`) is the answer with *eight* in sight. The top left one is blocked (by the asteroid denoted by `X`), but all others are in its sight. Notice the top right asteroid is in sight. Hint: Find the slope or angle.
+Below, the highlighted asteroid (denoted by `0`) is the answer with *eight* in sight. The top left one is blocked (by the asteroid denoted by `X`), but all others are in its sight. Notice the top right asteroid is in sight. Hint: Find the slope or angle.
 
 ```
 .#..#
 .....
 ##X##
-....O
-...##
+....#
+...0#
 ```
 
 The following denotes how many asteroids are visible at each location.
