@@ -39,7 +39,7 @@ The following denotes how many asteroids are visible at each location.
 ...87
 ```
 
-![image tooltip here](/assets/img/trie.png)
+![image tooltip here](/algosig/assets/img/trie.png)
 
 For more information on the problem check out the problem source on advent of code linked above or the problem slide [here.](https://docs.google.com/presentation/d/1FhnQGN0AzcDZL7ZaSnnj-PCvJYLDAOhQ-v7GphZzZnc/edit#slide=id.g61f898af63_0_0)
 
