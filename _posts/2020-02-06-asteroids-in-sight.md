@@ -9,25 +9,9 @@ tags:
 
 ## Description
 
-Find the asteroid (denoted by `#`) that has the maximum number of other asteroids in its “line of sight”. The input file looks like the following:
-```
-Input File:
-.#..#
-.....
-#####
-....#
-...##
-```
+Find the asteroid (denoted by `#`) that has the maximum number of other asteroids in its “line of sight”. Below, the highlighted asteroid is the answer with *eight* in sight. The top left one is blocked, but all others are in its sight. Notice the top right asteroid is in sight. Hint: Find the slope or angle.
 
-Below, the highlighted asteroid (denoted by `0`) is the answer with *eight* in sight. The top left one `L` is blocked (by the asteroid denoted by `X`), but all others are in its sight. Notice the top right asteroid is in sight. Hint: Find the slope or angle.
-
-```
-.L..#
-.....
-##X##
-....#
-...0#
-```
+![asteroids example](/algosig/assets/img/asteroids.png)
 
 The following denotes how many asteroids are visible at each location.
 
@@ -38,10 +22,6 @@ The following denotes how many asteroids are visible at each location.
 ....7
 ...87
 ```
-
-![image tooltip here](/algosig/assets/img/trie.png)
-
-For more information on the problem check out the problem source on advent of code linked above or the problem slide [here.](https://docs.google.com/presentation/d/1FhnQGN0AzcDZL7ZaSnnj-PCvJYLDAOhQ-v7GphZzZnc/edit#slide=id.g61f898af63_0_0)
 
 ## Solution
 
