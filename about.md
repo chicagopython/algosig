@@ -21,3 +21,7 @@ agenda = {
   '8:30pm': Go home
 }
 ```
+
+### Add Your Own Solutions
+
+We encourage event participants to add their own solutions to this site. Check out our <a href="{{ 'contribute' | relative_url }}">Contribute Page</a> to learn more.

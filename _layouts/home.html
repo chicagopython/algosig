@@ -2,19 +2,19 @@
 layout: default
 ---
 
-
 {%- if page.title -%}
   <h1 class="page-heading">{{ page.title }}</h1>
 {%- endif -%}
 
 <div class="container">
   <div class="jumbotron">
-    <img src="{{ '/assets/img/logo_v2.png' | relative_url }}" class="mx-auto d-block" alt="">
-    <!-- <h1 class="display-4">Hello, world!</h1> -->
-    <p class="lead text-center">{{ site.description }}</p>
-    <hr class="my-4">
+    <img src="{{ '/assets/img/sig_logo.png' | relative_url }}" class="mx-auto d-block" alt="">
+    <p class="lead text-center">
+      {{ site.description }}
+    </p>
+    <hr class="my-3">
     <div class="col text-center">
-    <a class="btn btn-primary btn-lg" href="{{ 'about' | relative_url }}" role="button">Learn more</a>
+      <a class="btn btn-primary btn-lg" href="{{ 'about' | relative_url }}" role="button">Learn more</a>
     </div>
   </div>
 </div>
@@ -32,12 +32,15 @@ layout: default
       {%- if page.list_title -%}
       <h3>{{ page.list_title }}</h3>
       {%- endif -%}
-      
+
       {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <div class="post-listing">
         <a href="{{ post.url | relative_url }}">
           <span class="text-muted">{{ post.date | date: date_format }}</span>
+          {% if post.tags contains 'unsolved' %}
+          <span class="badge badge-danger">Needs Solution!</span>
+          {% endif %}
           <h4>
             {{ post.title | escape }}
           </h4>
@@ -51,7 +54,7 @@ layout: default
       <!-- {%- if post.tags.size > 0 -%}
       <p>
       {%- for tag in post.tags -%}
-      {{ tag | downcase }} 
+      {{ tag | downcase }}
       {%- endfor -%}
       </p>
       {%- endif -%} -->

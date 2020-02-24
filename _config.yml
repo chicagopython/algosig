@@ -36,7 +36,7 @@ header_pages:
         link: https://twitter.com/ChicagoPython
         icon: fa fa-twitter
       - name: Slack
-        link: https://joinchipyslack.herokuapp.com/
+        link: https://chipy.slack.com/app_redirect?channel=algorithms
         icon: fa fa-slack
       - name: Email
         link: mailto:chicago-sig-organizers@python.org
