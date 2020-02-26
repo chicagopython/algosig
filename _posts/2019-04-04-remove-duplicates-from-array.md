@@ -2,6 +2,7 @@
 title: Remove Duplicates from an Array
 category: AlgoSIG 2
 link: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+author: Sree Prasad
 tags: array, python-101
 ---
 
