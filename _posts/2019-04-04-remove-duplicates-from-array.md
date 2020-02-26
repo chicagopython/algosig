@@ -24,7 +24,7 @@ After the function runs, the value returned is `6` and the contents of the input
 
 ---
 ## Solution
-Here is one possible solution to the problem. We iterate through `arr` keeping track of the numbers we removed as `offset` (meaning the index offset) and the number of times we've seen the number at the current index as `count`.
+Here is one possible solution to the problem. We iterate through `nums` keeping track of the numbers we removed as `offset` (meaning the index offset) and the number of times we've seen the number at the current index as `count`.
 When we encounter consecutive elements that are equal, we increase the `count`. When they're not equal, we reset the `count` to 1.
 If the `count` is greater than `max_count`, then we "remove" it by increasing the `offset` and overwriting the value at index `i - offset`.
 
@@ -47,4 +47,4 @@ def remove_duplicates(nums, max_count):
     return len(nums) - offset
 ```
 
-The runtime is O(n), where *n* is the number of elements in the array `arr`.
+The runtime is O(n), where *n* is the number of elements in the array `nums`.
