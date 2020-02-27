@@ -21,6 +21,11 @@ Given an array `arr` of strings made only from lowercase letters, return a list 
 
 ## Solution
 
+{::options parse_block_html="true" /}
+
+<details>
+<summary markdown="span">Expand</summary>
+
 We can use the *[Counter](https://docs.python.org/3/library/collections.html#collections.Counter)* data structure to solve this problem. A *Counter* is essentially a dictionary where the *key* corresponds to an element in the collection and the *value* corresponds to the number of times that element appears in the collection. We initialize `char_count` with the first element in `arr` then iterate through all the elements and intersect them (denoted by the `&`) with the current `char_count`.
 
 
@@ -35,3 +40,7 @@ def find_common_chars(arr):
 ```
 
 The runtime is *O(nm)* where *n* is the number of words in the `arr` and *m* is the number of characters in a word. If you look into the implementation of *Counter* or implement something similar, you'll find that the intersection iterates through all the items in the *Counter* object (the number of character-to-count entries).
+
+</details>
+
+{::options parse_block_html="false" /}
