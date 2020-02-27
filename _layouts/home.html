@@ -62,31 +62,38 @@ layout: default
       {%- endfor -%}
 
       {% if site.paginate %}
-      <div class="pager">
+      <div>
         <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li>
-            <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">
+          <li class="page-item {{ paginator.previous_page_path ? 'active' : 'disabled' }}">
+            <a class="page-link"  href="{{ paginator.previous_page_path | relative_url }}">&laquo;</a>
+          </li>
+          {%- if paginator.previous_page %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">
               {{ paginator.previous_page }}
             </a>
           </li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">&nbsp;{{ paginator.page }}&nbsp;</div></li>
-        {%- if paginator.next_page %}
-          <li>
-            <a href="{{ paginator.next_page_path | relative_url }}" class="next-page">
+          {%- endif %}
+          <li class="page-item active">
+            <a class="page-link" href="#">{{ paginator.page }}</a>
+          </li>
+          {%- if paginator.next_page %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">
               {{ paginator.next_page }}
             </a>
           </li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
+          {%- endif %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">&raquo;</a>
+          </li>
         </ul>
       </div>
       {%- endif %}
-      <a class="btn btn-primary btn-lg" href="{{ 'feed.xml' | relative_url }}" role="button"><i class="fa fa-rss"></i> Subscribe</a>
+
+      <a class="btn btn-primary btn-lg" href="{{ 'feed.xml' | relative_url }}" role="button">
+        <i class="fa fa-rss"></i> Subscribe
+      </a>
     </div>
   </div>
 </div>
