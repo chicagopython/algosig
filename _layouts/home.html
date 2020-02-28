@@ -51,14 +51,16 @@ layout: default
         {{ post.excerpt }}
       {%- endif -%}
 
+      {% comment %} and
       <!-- TODO: implement tags -->
-      <!-- {%- if post.tags.size > 0 -%}
+      {%- if post.tags.size > 0 -%}
       <p>
       {%- for tag in post.tags -%}
       {{ tag | downcase }}
       {%- endfor -%}
       </p>
-      {%- endif -%} -->
+      {%- endif -%}
+      {% endcomment %}
 
       {%- endfor -%}
 
