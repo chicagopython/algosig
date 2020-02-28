@@ -15,9 +15,13 @@ url: "http://chicagopython.github.io" # the base hostname & protocol for your si
 twitter_username: ChicagoPython
 github_username:  chicagopython
 
+paginate: 8
+paginate_path: "/posts/:num"
+
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 header_pages:
   - name: About

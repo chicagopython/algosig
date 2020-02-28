@@ -1,0 +1,58 @@
+{% if site.paginate and paginator.total_pages > 1 %}
+<div>
+  <ul class="pagination">
+    <!-- previous link -->
+    {%- if paginator.previous_page %}
+    <li class="page-item">
+      <a class="page-link" href="{{ paginator.previous_page_path | relative_url | append: '#posts-list'}}">
+        &laquo;
+      </a>
+    </li>
+    {%- else %}
+    <li class="page-item disabled">
+      <a class="page-link">
+        &laquo;
+      </a>
+    </li>
+    {%- endif %}
+
+    <!-- page num links -->
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+      <li class="page-item active">
+        <a class="page-link" href="{{ page.path | append: '#posts-list' }}">
+          {{ page }}
+        </a>
+      </li>
+      {% elsif page == 1 %}
+      <li class="page-item">
+        <a class="page-link" href="{{ paginator.previous_page_path | relative_url | append: '#posts-list'}}">
+          {{ page }}
+        </a>
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', page | append: '#posts-list' }}">
+          {{ page }}
+        </a>
+      </li>
+      {%- endif %}
+    {%- endfor %}
+
+    <!-- next link -->
+    {% if paginator.next_page %}
+    <li class="page-item">
+      <a class="page-link" href="{{ paginator.next_page_path | relative_url | replace: ':num', page | append: '#posts-list' }}">
+        &raquo;
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="page-link">
+        &raquo;
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+{%- endif %}
