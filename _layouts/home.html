@@ -30,7 +30,8 @@ layout: default
   <div class="row">
     <div class="col-sm-10 mx-auto">
       {%- if page.list_title -%}
-      <h3>{{ page.list_title }}</h3>
+      <h3 id="posts-list">{{ page.list_title }}</h3>
+      <hr class="my-3 bg-primary">
       {%- endif -%}
 
       {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
@@ -61,43 +62,7 @@ layout: default
 
       {%- endfor -%}
 
-      {% if site.paginate %}
-      <div>
-        <ul class="pagination">
-          {%- if paginator.previous_page %}
-          <li class="page-item">
-            <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo;</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">
-              {{ paginator.previous_page }}
-            </a>
-          </li>
-          {%- else %}
-          <li class="page-item disabled">
-            <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo;</a>
-          </li>
-          {%- endif %}
-          <li class="page-item active">
-            <a class="page-link" href="#">{{ paginator.page }}</a>
-          </li>
-          {%- if paginator.next_page %}
-          <li class="page-item">
-            <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">
-              {{ paginator.next_page }}
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">&raquo;</a>
-          </li>
-          {%- else %}
-          <li class="page-item disabled">
-            <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">&raquo;</a>
-          </li>
-          {%- endif %}
-        </ul>
-      </div>
-      {%- endif %}
+      {%- include pagination.html -%}
 
       <a class="btn btn-primary btn-lg" href="{{ 'feed.xml' | relative_url }}" role="button">
         <i class="fa fa-rss"></i> Subscribe
