@@ -26,7 +26,7 @@
       </li>
       {% elsif page == 1 %}
       <li class="page-item">
-        <a class="page-link" href="{{ paginator.previous_page_path | relative_url | append: '#posts-list'}}">
+        <a class="page-link" href="{{ '/' | relative_url | append: '#posts-list'}}">
           {{ page }}
         </a>
       </li>
