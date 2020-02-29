@@ -1,6 +1,6 @@
 ---
 title: Best Time to Buy and Sell Stock
-category: AlgoSIG 1
+category: AlgoSIG 11
 link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 author:
 tags:

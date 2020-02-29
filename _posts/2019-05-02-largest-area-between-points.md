@@ -11,7 +11,7 @@ tags:
 
 Using only the Manhattan distance, determine the area around each coordinate by counting the number of integer X,Y locations that are closest to that coordinate (and aren't tied in distance to any other coordinate). Your goal is to find the size of the largest area that isn't infinite.
 
-You'll need to get your own input for this challenge from [this Advent of Code problem]({{ post.link }}).
+You'll need to get your own input for this challenge from [this Advent of Code problem]({{ page.link }}).
 
 ```
 # Sample input:

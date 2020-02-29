@@ -1,6 +1,6 @@
 ---
 title: Random Sample from Linked List
-category: AlgoSIG 1
+category:
 link:
 author:
 tags:
@@ -12,8 +12,6 @@ tags:
 Given a singly linked list, return a random node's value from the linked list. Each node must have the same probability of being chosen.
 
 **Follow up:** What if the linked list is extremely large and its length is unknown to you? Could you solve this efficiently without using extra space?
-
-[Further Reading](https://docs.python.org/3.8/faq/design.html#how-are-lists-implemented-in-cpython)
 
 ## Solution
 

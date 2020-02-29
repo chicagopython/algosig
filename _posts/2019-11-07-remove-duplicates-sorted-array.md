@@ -23,6 +23,7 @@ print(unq_nums_len, nums, sep='/n')
     [1, 2, 3, 6, 7]
 ```
 
+[Further Reading: *How are Lists Implemented in Python?*](https://docs.python.org/3.8/faq/design.html#how-are-lists-implemented-in-cpython)
 
 ## Solution
 

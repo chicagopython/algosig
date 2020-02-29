@@ -9,6 +9,6 @@ tags:
 
 ## Description
 
-You'll need to get your own input for this challenge from [this Advent of Code problem]({{ post.link }}).
+You'll need to get your own input for this challenge from [this Advent of Code problem]({{ page.link }}).
 
 ## Solution
