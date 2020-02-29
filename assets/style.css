@@ -42,7 +42,7 @@ body {
 
 .post-listing a:hover, a:visited, a:active { text-decoration: none;}
 
-.post-img {
+.post img {
     background-color: white;
     padding: 5px;
     max-width: 100%;

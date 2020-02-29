@@ -21,7 +21,7 @@ coords = [
 ]
 ```
 
-<img class="img-fluid" src="{{ '/assets/img/star.png' | relative_url }}">
+![]({{ '/assets/img/star.png' | relative_url }})
 
 ## Solution
 

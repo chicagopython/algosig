@@ -8,7 +8,7 @@ tags:
 
 ## Description
 
-Given a sorted array nums, remove the duplicates *in-place* such that each element appears only once, and return the new length.
+Given a sorted array `nums`, remove the duplicates *in-place* such that each element appears only once, and return the new length.
 
 Do not allocate extra space for another array.
 
@@ -23,6 +23,7 @@ print(unq_nums_len, nums, sep='/n')
     [1, 2, 3, 6, 7]
 ```
 
+[Further Reading: *How are Lists Implemented in Python?*](https://docs.python.org/3.8/faq/design.html#how-are-lists-implemented-in-cpython)
 
 ## Solution
 

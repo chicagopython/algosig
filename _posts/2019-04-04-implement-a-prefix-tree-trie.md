@@ -6,7 +6,7 @@ author: Kevin Nasto
 tags: trie, tree, autocomplete
 ---
 
-<img src="{{ '/assets/img/trie.png' | relative_url }}">
+![]({{ '/assets/img/trie.png' | relative_url }})
 
 ## Description
 

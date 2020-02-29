@@ -11,36 +11,27 @@ tags:
 
 Given a list of wires that _cross_ (intersect), find the closest intersection point to start of the wire. All wires start at the same point. A wire CANNOT intersect with itself. A wire is defined by a string in a file representing steps. See link for description of PART 2.
 
-```
-...........
-...........
-...........
-....+----+.
-....|....|.
-....|....|.
-....|....|.
-.........|.
-.o-------+.
-...........
-```
+You'll need to get your own input for this challenge from [this Advent of Code problem]({{ page.link }}).
 
-```
-...........
-.+-----+...
-.|.....|...
-.|..+--X-+.
-.|..|..|.|.
-.|.-X--+.|.
-.|..|....|.
-.|.......|.
-.o-------+.
-...........
-```
-
-Input File:
+Example input:
 ```
 R8,U5,L5,D3
 U7,R6,D4,L4
+```
+
+```
+Line 1:          Line 2 and
+                 intersections:
+  ...........  |  ...........
+  ...........  |  .+-----+...
+  ...........  |  .|.....|...
+  ....+----+.  |  .|..+--X-+.
+  ....|....|.  |  .|..|..|.|.
+  ....|....|.  |  .|.-X--+.|.
+  ....|....|.  |  .|..|....|.
+  .........|.  |  .|.......|.
+  .o-------+.  |  .o-------+.
+  ...........  |  ...........
 ```
 
 ## Solution
