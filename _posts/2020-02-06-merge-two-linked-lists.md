@@ -27,7 +27,7 @@ class ListNode(object):
 
 In order to tackle this problem, we need a basic understanding of singly linked lists. A (singly) linked list is composed of nodes that are connected in a **single** direction.
 
-<a href="https://en.wikipedia.org/wiki/Linked_list"><img class="post-img" src="{{ '/assets/img/singly-linked-list.svg' | relative_url }}" title="Wikipedia"></a>
+[![Wikipedia]({{ '/assets/img/singly-linked-list.svg' | relative_url }})](https://en.wikipedia.org/wiki/Linked_list)
 
 Linked lists are very simple data structures. We can't use python list features like index slicing (`list[0:4]`) to access the values of our list. To know all the values of a linked list, we have to start at the very first node and read forward. Check out [Dan Bader's article](https://dbader.org/blog/python-linked-list) for a more thorough explanation.
 
