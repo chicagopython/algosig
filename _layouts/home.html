@@ -3,16 +3,18 @@ layout: default
 ---
 
 <div class="container">
+  <!-- Jumbotron -->
   <div class="row">
-    <div class="col-12 col-sm-11 col-md-10 mx-auto px-3 ps-sm-0">
+    <div class="col-12 col-sm-11 col-md-10 col-lg-10 mx-auto px-2 ps-sm-0">
       <div class="jumbotron">
         <div class="row">
+          <!-- Padding col -->
           <div class="col-xl-1"></div>
-          <!-- Logo -->
+          <!-- Logo col -->
           <div class="col-md-6 col-lg-5 col-xl-4">
             <img src="{{ '/assets/img/sig_logo.png' | relative_url }}" class="mx-auto pb-3 px-2 pb-md-0 d-block">
           </div>
-          <!-- Description -->
+          <!-- Description col -->
           <div class="col-md-6 col-lg-6 col-xl-5 text-center text-md-left my-auto">
             <p class="lead">
             {{ site.description }}
@@ -20,6 +22,7 @@ layout: default
             <hr class="my-3">
             <a class="btn btn-primary btn-lg" href="{{ 'about' | relative_url }}" role="button">Learn more</a>
           </div>
+          <!-- Padding col -->
           <div class="col-lg-1 col-xl"></div>
         </div>
       </div>

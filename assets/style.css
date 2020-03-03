@@ -37,9 +37,9 @@ body {
 .post-listing a {
     color: white;
 }
-.post-listing a:hover { color: #F6127D !important;}
+.post-listing a:hover { color: #F6127D !important; }
 
-.post-listing a:hover, a:visited, a:active { text-decoration: none;}
+.post-listing a:hover, a:visited, a:active { text-decoration: none; }
 
 .post img {
     background-color: white;
@@ -57,16 +57,21 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { mar
 /** `main` element */
 main {
     display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
-    padding-top: 90px;
+    padding-top: 80px;
     padding-bottom: 60px;
 }
 
 /* * Headings */
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
+h1 { font-size: 2.7rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.9rem; }
+h4 { font-size: 1.4rem; }
+
 /** Site footer */
 footer {
-    font-size:0.95rem;
+    font-size: 0.95rem;
 }
 
 footer a {

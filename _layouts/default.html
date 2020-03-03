@@ -2,10 +2,13 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 {% include head.html %}
 <body>
-  {% include header.html %}
+  {% include nav.html %}
   <main role="main" class="flex-shrink-0">
     {{ content }}
   </main>
   {%- include footer.html -%}
+  <!-- Auto Hiding Navbar -->
+  <script src="{{ '/assets/jquery.bootstrap-autohidingnavbar.js' | relative_url }}"></script>
+  <script>$("div.navbar.fixed-top").autoHidingNavbar();</script>
 </body>
 </html>
