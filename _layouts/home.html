@@ -2,33 +2,42 @@
 layout: default
 ---
 
-{%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-{%- endif -%}
-
 <div class="container">
-  <div class="jumbotron">
-    <img src="{{ '/assets/img/sig_logo.png' | relative_url }}" class="mx-auto d-block" alt="">
-    <p class="lead text-center">
-      {{ site.description }}
-    </p>
-    <hr class="my-3">
-    <div class="col text-center">
-      <a class="btn btn-primary btn-lg" href="{{ 'about' | relative_url }}" role="button">Learn more</a>
+  <!-- Jumbotron -->
+  <div class="row">
+    <div class="col-12 col-sm-11 col-md-10 col-lg-10 mx-auto px-2 ps-sm-0">
+      <div class="jumbotron">
+        <div class="row">
+          <!-- Padding col -->
+          <div class="col-xl-1"></div>
+          <!-- Logo col -->
+          <div class="col-md-6 col-lg-5 col-xl-4">
+            <img src="{{ '/assets/img/sig_logo.png' | relative_url }}" class="mx-auto pb-3 px-2 pb-md-0 d-block">
+          </div>
+          <!-- Description col -->
+          <div class="col-md-6 col-lg-6 col-xl-5 text-center text-md-left my-auto">
+            <p class="lead">
+            {{ site.description }}
+            </p>
+            <hr class="my-3">
+            <a class="btn btn-primary btn-lg" href="{{ 'about' | relative_url }}" role="button">Learn more</a>
+          </div>
+          <!-- Padding col -->
+          <div class="col-lg-1 col-xl"></div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-{% if site.paginate %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+  {% if site.paginate %}
+    {% assign posts = paginator.posts %}
+  {% else %}
+    {% assign posts = site.posts %}
+  {% endif %}
 
-{%- if posts.size > 0 -%}
-<div class="container">
+  {%- if posts.size > 0 -%}
   <div class="row">
-    <div class="col-sm-10 mx-auto">
+    <div class="col-12 col-sm-10 col-md-9 mx-auto">
       {%- if page.list_title -%}
       <h3 id="posts-list">{{ page.list_title }}</h3>
       <hr class="my-3 bg-primary">
@@ -71,5 +80,5 @@ layout: default
       </a>
     </div>
   </div>
+  {%- endif -%}
 </div>
-{%- endif -%}

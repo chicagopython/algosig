@@ -4,15 +4,17 @@ layout: default
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 mx-auto">
+    <div class="col-12 col-md-11 col-lg-9 col-xl-8 mx-auto">
       <h1 class="post-title">{{ page.title | escape }}</h1>
       <div class="row">
+        <!-- Date & Author -->
         <div class="col-sm-5">
           {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-          <span class="text-muted">{{ page.date | date: date_format }}{% if page.author %} by {{ page.author | escape }}{% endif %}</span class="text-muted">
+          <span class="text-muted text-nowrap">{{ page.date | date: date_format }}{% if page.author %} by {{ page.author | escape }}{% endif %}</span class="text-muted">
         </div>
+        <!-- Buttons -->
         <div class="col">
-          <div class="btn-group btn-group-toggle float-md-right" data-toggle="buttons">
+          <div class="btn-group btn-group-toggle float-sm-right" data-toggle="buttons">
             <a class="btn btn-outline-primary btn-sm text-nowrap" href="https://github.com/{{site.github_username}}{{site.baseurl}}/edit/master/{{page.path}}" role="button">
               <i class="fa fa-pencil"></i> Edit Page
             </a>
@@ -25,7 +27,6 @@ layout: default
         </div>
       </div>
       <hr class="my-3 bg-primary">
-
       <div class="post">
       {{ content }}
       </div>
