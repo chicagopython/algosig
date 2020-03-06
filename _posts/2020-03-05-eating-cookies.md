@@ -24,3 +24,22 @@ Thus, `eating_cookies(3)` should return an answer of 4.
 Note: there is 1 way to eat 0 cookies.
 
 ## Solution
+
+
+```python
+def eatingCookies(n):
+  if n < 0:
+    print('Incorrect Input')
+  elif n == 0:
+    return 1
+  elif n == 1:
+    return 1
+  elif n == 2:
+    return 2
+  else:
+    return eatingCookies(n-1) + eatingCookies(n-2) + eatingCookies(n-3)
+    
+
+
+```
+
