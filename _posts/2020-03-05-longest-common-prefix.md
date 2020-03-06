@@ -28,6 +28,33 @@ Explanation: There is no common prefix among the input strings.
 Note: all given inputs are in lowercase letters `a-z`.
 
 ## Solution
+```python
+def check_letter(idx, letter, min_len, strs):
+    for string in strs:
+        if idx >= min_len:
+            return False
+        if letter != string[idx]:
+            return False
+    return True
+
+class Solution:
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if not strs:
+            return ''
+        min_len = min([len(x) for x in strs])
+        prefix = []
+        first_string = strs[0]
+        for idx, letter in enumerate(first_string):
+            if check_letter(idx, letter, min_len, strs):
+                prefix.append(letter)
+            else:
+                break
+        return ''.join(prefix)
+```
 
 ## Javascript Solution
 ```javascript
