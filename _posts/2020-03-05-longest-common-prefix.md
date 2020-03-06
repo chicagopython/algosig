@@ -1,6 +1,6 @@
 ---
 title: Longest Common Prefix
-link:
+link: https://leetcode.com/problems/longest-common-prefix/
 author:
 tags:
   - unsolved
