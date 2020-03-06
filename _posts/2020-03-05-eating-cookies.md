@@ -65,7 +65,7 @@ def eatingCookies(n):
 
 ## Tests
 
-```
+```python
 # tests
 assert eating_cookies(50) == 10562230626642
 assert eating_cookies(100) == 180396380815100901214157639
