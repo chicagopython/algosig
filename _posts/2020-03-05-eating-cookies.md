@@ -27,17 +27,30 @@ Note: there is 1 way to eat 0 cookies.
 
 
 ```python
+
+class Memoize(object):
+    def __init__(self, func):
+        self.func = func
+        self.cache = {}
+    def __call__(self, *args):
+        if args in self.cache:
+            return self.cache[args]
+        ret = self.func(*args)
+        self.cache[args] = ret
+        return ret
+
+@Memoize
 def eatingCookies(n):
-  if n < 0:
-    print('Incorrect Input')
-  elif n == 0:
-    return 1
-  elif n == 1:
-    return 1
-  elif n == 2:
-    return 2
-  else:
-    return eatingCookies(n-1) + eatingCookies(n-2) + eatingCookies(n-3)
+    if n < 0:
+        print('Incorrect Input')
+    elif n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        return eatingCookies(n-1) + eatingCookies(n-2) + eatingCookies(n-3)
     
 
 
