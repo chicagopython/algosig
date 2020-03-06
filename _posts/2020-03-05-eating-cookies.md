@@ -3,7 +3,8 @@ title: Eating Cookies
 link:
 author:
 tags:
-  - unsolved
+  - recursive
+  - iterative
 ---
 
 ## Description
