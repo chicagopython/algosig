@@ -25,7 +25,7 @@ Thus, `eating_cookies(3)` should return an answer of 4.
 
 Note: there is 1 way to eat 0 cookies.
 
-## Solution 1: Iterative
+## Solution 1: Iterative by adambain
 
 ```python
 def eating_cookies(n):
@@ -37,7 +37,7 @@ def eating_cookies(n):
     ways[i] = ways[i-1] + ways[i-2] + ways[i-3]
   return ways[n]
 ```
-## Solution 2: Recursive
+## Solution 2: Recursive by lakshmanboddoju
 
 ```python
 class Memoize(object):
