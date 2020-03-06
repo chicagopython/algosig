@@ -24,3 +24,14 @@ Thus, `eating_cookies(3)` should return an answer of 4.
 Note: there is 1 way to eat 0 cookies.
 
 ## Solution
+
+```python
+def eating_cookies(n):
+    ways = {0:1,
+            1:1,
+            2:2,
+            3:4}
+    for i in range(4, n+1):
+        ways[i] = ways[i-1] + ways[i-2] + ways[i-3]
+    return ways[n]
+```
