@@ -21,4 +21,6 @@ For example, for a jar of cookies with `n = 3` (the jar has 3 cookies inside it)
 
 Thus, `eating_cookies(3)` should return an answer of 4.
 
+Note: there is 1 way to eat 0 cookies.
+
 ## Solution
