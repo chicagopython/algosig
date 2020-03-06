@@ -2,7 +2,7 @@
 title: Longest Common Prefix
 link: https://leetcode.com/problems/longest-common-prefix/
 date: 2020-03-05 14:40:47
-author:
+author: Kevin Nasto
 tags:
 ---
 
@@ -56,7 +56,7 @@ class Solution:
         return ''.join(prefix)
 ```
 
-## Javascript Solution
+## Javascript Solution by Akira957
 ```javascript
 var longestCommonPrefix = function(strs) {
      if(!strs.length){
