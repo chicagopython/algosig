@@ -28,6 +28,11 @@ Explanation: There is no common prefix among the input strings.
 Note: all given inputs are in lowercase letters `a-z`.
 
 ## Solution
+
+#### Space and Time Complexity
+
+Since we aren't storing anything the space complexity is _O(1)_. The time complexity is _O(mn)_ where _m_ is the number of letters in the common prefix and _n_ is the number of strings. We are checking letter by letter (only if it matches) for every string.
+
 ```python
 def check_letter(idx, letter, min_len, strs):
     for string in strs:
