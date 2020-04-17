@@ -5,7 +5,7 @@ layout: default
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-11 col-lg-9 col-xl-8 mx-auto">
-      <h1 class="post-title">{{ page.title | escape }}</h1>
+      <h1 class="post-title">{{ page.title | escape }} </h1>
       <div class="row">
         <!-- Date & Author -->
         <div class="col-sm-5">
@@ -30,6 +30,31 @@ layout: default
       <div class="post">
       {{ content }}
       </div>
+
+
+    <div id="gh-comments">
+        <br/><br/>
+        <h2>Comments</h2>
+        <!-- <div id="gh-comments-list"></div> -->
+        <ul id="gh-comments-list" class="list-unstyled"></ul>
+        <a href="javascript:void(0)" id="gh-load-comments" class="btn" style="display:none">Load more comments</a>
+    </div>
+
+    <script src="{{ '/assets/github_comments.js' | relative_url }}"> </script>
+
+    <script type="text/javascript"> 
+        ShowComments ( 
+            "{{site.github_username | append: site.baseurl}}" , 
+            "{{ page.gh_comments_issue_id }}" 
+        ); 
+    </script>
+
     </div>
   </div>
+
+
 </div>
+
+
+
+
