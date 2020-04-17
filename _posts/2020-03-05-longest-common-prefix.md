@@ -3,6 +3,7 @@ title: Longest Common Prefix
 link: https://leetcode.com/problems/longest-common-prefix/
 date: 2020-03-05 14:40:47
 author: Kevin Nasto
+gh_comments_issue_id: 33
 tags:
 ---
 
