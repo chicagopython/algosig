@@ -3,7 +3,7 @@
 function ShowComments(repo_name, issue_id) {
 
     var url = "https://github.com/" + repo_name + "/issues/" + issue_id
-    var api_url = "https://api.github.com/repos/" + repo_name + "/issues/" + issue_id + "/comments"
+    var api_url = "https://api.github.com/repos/" + repo_name + "/issues/" + issue_id + "/comments?page=1&per_page=100"
     
     $.ajax(api_url, {
         headers: {Accept: "application/vnd.github.v3.html+json"},
@@ -14,17 +14,19 @@ function ShowComments(repo_name, issue_id) {
 
                 var date = new Date(comment.created_at);
 
-                var t = "<li class='media my-4'>";
-                //t += "<img src='" + comment.user.avatar_url + "' width='24px'>";
-                t += "<img class='mr-3' src='" + comment.user.avatar_url + "'width='64px' alt='Generic placeholder image'>";
+                var t = "<div class='media my-4'>";
+                t += "<div class='media-left mr-3'><img class='media-object' src='" + comment.user.avatar_url + "'style='width:64px'>";
+                t += "</div>";
                 t += "<div class='media-body'>";
                 //t += "<b><a href='" + comment.user.html_url + "'>" + comment.user.login + "</a></b>";
-                t += "<h5 class='mt-0 mb-1'>"+comment.user.login 
-                t += "<small><i> "+ date.toUTCString() + "</i></small>"
-                t += "</h5>"
+                t += "<h5 class='media-heading'> "+comment.user.login;
+                var localDateString = date.toString();
+                localDateString = localDateString.substring(0, localDateString.lastIndexOf(":"));
+                t += "<small><i> "+ localDateString  + "</i></small>";
+                t += "</h5>";
                 t += comment.body_html;
                 t += "</div>";
-                t += "</li>";
+                t += "</div>";
                 $("#gh-comments-list").append(t);
             });
         },
