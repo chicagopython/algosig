@@ -100,3 +100,8 @@ pre > code {
 .highlight {
     border-radius: 0.3rem;
 }
+
+/* Comments */
+#gh-comments-list div.media-body {
+    overflow-x: auto;
+}
