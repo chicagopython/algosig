@@ -101,9 +101,7 @@ pre > code {
     border-radius: 0.3rem;
 }
 
-/* This is so horizontal scroll bar doesnt show in comments with markdown */
-#gh-comments-list pre {
-    white-space:pre-wrap;
-    word-wrap:break-word;
-    text-align:justify;
+/* Comments */
+#gh-comments-list div.media-body {
+    overflow-x: auto;
 }
