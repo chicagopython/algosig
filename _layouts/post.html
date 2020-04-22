@@ -32,7 +32,8 @@ layout: default
       </div>
 
       {% if page.gh_comments_issue_id %}
-      <h2>Comments</h2>
+      <br></br>
+      <h1>Comments</h1>
       <div id="gh-comments-list"></div>
       <script src="{{ '/assets/github_comments.js' | relative_url }}"> </script>
       <script type="text/javascript"> 
@@ -41,6 +42,7 @@ layout: default
               "{{ page.gh_comments_issue_id }}" 
           ); 
       </script>
+      <a href="https://github.com/{{{site.github_username | append: site.baseurl}}/issues/{{page.gh_comments_issue_id}}" role="button" class="btn btn-outline-success">Comment on GitHub</a>
       {% endif %}
 
     </div>
