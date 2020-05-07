@@ -5,6 +5,7 @@ link: https://leetcode.com/problems/search-insert-position/
 author:
 gh_comments_issue_id: 37
 tags:
+  - unsolved
 ---
 
 ## Description
