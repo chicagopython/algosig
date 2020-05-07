@@ -4,7 +4,7 @@ Algo SIG is a subgroup of [ChiPy](https://www.chipy.org/), the Chicago Python Us
 
 ## How to add new content
 
-This site is designed for [GitHub Pages](https://pages.github.com/), which is built with [Jekyll](https://jekyllrb.com/). *No local setup is required*. 
+This site is designed for [GitHub Pages](https://pages.github.com/), which is built with [Jekyll](https://jekyllrb.com/). *No local setup is required*.
 1. Fork the repository
 2. Create or edit a [markdown file](https://guides.github.com/features/mastering-markdown/) in the `_posts` folder. See existing posts for header variables to include.
 3. Submit a pull request. Upon approval, your changes will be added the hosted website.
@@ -57,7 +57,7 @@ bundle install
 
 ### Run the Server
 ```
-bundle exec jekyll serve
+bundle exec jekyll serve --future
 ```
 
 ## Miscellaneous
