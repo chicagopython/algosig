@@ -1,0 +1,38 @@
+---
+title: Search Insert Position
+category:
+link: https://leetcode.com/problems/search-insert-position/
+author:
+gh_comments_issue_id: 37
+tags:
+---
+
+## Description
+
+Given a sorted array, `nums`, and a value, `target`, return the index if the target is found. Otherwise, return the index where it would be if it were inserted in order.
+
+You may assume no duplicates in the array.
+
+Example 1:
+  ```python
+  nums   = [1,3,5,6]
+  target = 5
+
+  return 2
+  ```
+Example 2:
+  ```python
+  nums   = [1,3,5,6]
+  target = 2
+
+  return 1
+  ```
+
+## Solution
+
+```python
+from typing import List
+
+def search_insert(nums:List[int], target:int) -> int:
+  return
+```
