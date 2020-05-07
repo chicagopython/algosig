@@ -4,7 +4,8 @@ category: AlgoSIG 2
 link: https://leetcode.com/problems/keys-and-rooms/
 author:
 tags:
-  - 2D matrix
+  - Depth First Search
+  - Graph
 ---
 
 ## Description
@@ -16,3 +17,10 @@ Formally, each room *i* has a list of keys `rooms[i]`, and each key `rooms[i][j]
 Initially, all the rooms start locked (except for room 0). You can walk back and forth between rooms freely.
 
 Return `true` if and only if you can enter every room.
+
+## Solution
+``` python
+class Solution:
+    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+        
+```
