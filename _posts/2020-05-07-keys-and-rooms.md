@@ -2,6 +2,7 @@
 title: Keys and Rooms
 category: AlgoSIG 2
 link: https://leetcode.com/problems/keys-and-rooms/
+gh_comments_issue_id: 40
 author:
 tags:
   - Depth First Search
