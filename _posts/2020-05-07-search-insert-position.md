@@ -14,19 +14,19 @@ Given a sorted array, `nums`, and a value, `target`, return the index if the tar
 You may assume no duplicates in the array.
 
 Example 1:
-  ```python
-  nums   = [1,3,5,6]
-  target = 5
+```python
+nums   = [1,3,5,6]
+target = 5
 
-  return 2
-  ```
+return 2
+```
 Example 2:
-  ```python
-  nums   = [1,3,5,6]
-  target = 2
+```python
+nums   = [1,3,5,6]
+target = 2
 
-  return 1
-  ```
+return 1
+```
 
 ## Solution
 
@@ -34,5 +34,10 @@ Example 2:
 from typing import List
 
 def search_insert(nums:List[int], target:int) -> int:
+  # write solution here
   return
+
+# tests
+assert search_insert([1,3,5,6], 5) == 2
+assert search_insert([1,3,5,6], 2) == 1
 ```
