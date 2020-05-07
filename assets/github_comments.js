@@ -1,13 +1,11 @@
 function ShowComments(repo_name, issue_id) {
 
-    var url = "https://github.com/" + repo_name + "/issues/" + issue_id
     var api_url = "https://api.github.com/repos/" + repo_name + "/issues/" + issue_id + "/comments?page=1&per_page=100"
 
     $.ajax(api_url, {
         headers: {Accept: "application/vnd.github.v3.html+json"},
         dataType: "json",
         success: function(comments) {
-            $("#gh-comments-list").append("<p>Visit the <b><a href='" + url + "'>GitHub Issue</a></b> to comment on this post</p>");
             $.each(comments, function(i, comment) {
 
                 var date = new Date(comment.created_at);
@@ -15,7 +13,7 @@ function ShowComments(repo_name, issue_id) {
                 var f_date = date.toLocaleDateString(undefined, options);
 
                 var t = `
-                    <div class='media my-4'>
+                    <div class='media my-2'>
                         <div class='media-left mr-3'>
                             <img class='rounded media-object' src=' ${comment.user.avatar_url}' style='width:50px'>
                         </div>
