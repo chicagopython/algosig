@@ -26,3 +26,24 @@ class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
 
 ```
+
+## Solution - Adam Bain, Sree Prasad, Michael Shoemaker, Sand Ip
+``` python
+class Solution:
+    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+      if len(rooms) <= 1:
+        return True
+      key_inventory = set([0]) # append only
+      #rooms_to_visit = set([0])#set(range(len(rooms))) # append and drop #len(rooms) # [0,1,2,3]
+      rooms_visited = set()
+
+      while key_inventory - rooms_visited:
+        chosen_room = list(key_inventory - rooms_visited)[0] #choose the room
+        keys = set(rooms[chosen_room])
+        key_inventory |= keys
+        rooms_visited.add(chosen_room)
+        if key_inventory == set(range(len(rooms))):
+          return True
+      
+      return False
+```
