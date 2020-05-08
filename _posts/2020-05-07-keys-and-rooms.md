@@ -30,20 +30,19 @@ class Solution:
 ## Solution - Adam Bain, Sree Prasad, Michael Shoemaker, Sand Ip
 ``` python
 class Solution:
-    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
-      if len(rooms) <= 1:
-        return True
-      key_inventory = set([0]) # append only
-      #rooms_to_visit = set([0])#set(range(len(rooms))) # append and drop #len(rooms) # [0,1,2,3]
-      rooms_visited = set()
+    def canVisitAllRooms(self, rooms):
+        if len(rooms) <= 1: #guard for short or empty list
+            return True
+        key_inventory = set([0]) # append only
+        rooms_visited = set() #append
 
-      while key_inventory - rooms_visited:
-        chosen_room = list(key_inventory - rooms_visited)[0] #choose the room
-        keys = set(rooms[chosen_room])
-        key_inventory |= keys
-        rooms_visited.add(chosen_room)
-        if key_inventory == set(range(len(rooms))):
-          return True
-      
-      return False
+        while key_inventory - rooms_visited: # We have keys to rooms we have not seen
+            chosen_room = list(key_inventory - rooms_visited)[0]  #choose the room
+            keys = set(rooms[chosen_room])  # visit chosen room, get keys
+            key_inventory |= keys  # add keys found in  room to inventory
+            rooms_visited.add(chosen_room)  # room has been visited
+            if key_inventory >= set(range(len(rooms))):  # Stop once we have a key for each room
+                return True 
+        
+        return False # We have no keys to rooms we have not seen, and we didnt have a key for each room
 ```
