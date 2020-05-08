@@ -31,7 +31,7 @@ src = 0, dst = 2, k = 0
 Output: 500
 ```
 
-## Recursive With Memoization
+## Solution 1 Recursive With Memoization
 
 ```python
 from collections import defaultdict
