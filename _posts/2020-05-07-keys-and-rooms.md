@@ -37,7 +37,7 @@ class Solution:
         rooms_visited = set() #append
 
         while key_inventory - rooms_visited: # We have keys to rooms we have not seen
-            chosen_room = list(key_inventory - rooms_visited)[0]  #choose the room
+            chosen_room = (key_inventory - rooms_visited).pop()  #choose the room
             keys = set(rooms[chosen_room])  # visit chosen room, get keys
             key_inventory |= keys  # add keys found in  room to inventory
             rooms_visited.add(chosen_room)  # room has been visited
