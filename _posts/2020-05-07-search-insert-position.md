@@ -48,11 +48,10 @@ assert search_insert([1,3,5,6], 2) == 1
 ```python
 from typing import List
 
-
 def search_insert(nums:List[int], target:int) -> int:
-	count = 0
-	while count <= len(nums)-1 and nums[count] < target:
-		count += 1
-	return count
+  count = 0
+  while count <= len(nums)-1 and nums[count] < target:
+    count += 1
+  return count
 ```
 
