@@ -8,6 +8,7 @@ tags:
   - Depth First Search
   - Graph
   - unsolved
+participants: Adam Bain, Sree Prasad, Michael Shoemaker
 ---
 
 ## Description
@@ -27,7 +28,8 @@ class Solution:
 
 ```
 
-## Solution - Adam Bain, Sree Prasad, Michael Shoemaker, Sand Ip
+## Solution
+
 ``` python
 class Solution:
     def canVisitAllRooms(self, rooms):
@@ -46,3 +48,35 @@ class Solution:
         
         return False # We have no keys to rooms we have not seen, and we didnt have a key for each room
 ```
+
+## Solution: Recursive
+class Solution:
+    
+    def __init__(self):
+      self.visited = set()
+      self.number_of_rooms = 0
+    
+    def dfs(self, rms, rm):
+        if rm not in self.visited:
+            print(rm)
+            self.visited.add(rm)
+            
+            for room_key in rms[rm]:
+              if room_key < self.number_of_rooms:
+                self.dfs(rms, room_key)
+    
+    def canVisitAllRooms(self, rooms) -> bool:
+        
+        if rooms:
+          self.number_of_rooms = len(rooms)
+          self.dfs(rooms, 0)
+
+          if len(self.visited) != self.number_of_rooms:
+            return False
+          
+          else:
+            return True
+
+        else:
+          print("No Rooms to Enter")
+          return False
