@@ -22,13 +22,6 @@ Initially, all the rooms start locked (except for room 0). You can walk back and
 Return `true` if and only if you can enter every room.
 
 ## Solution
-``` python
-class Solution:
-    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
-
-```
-
-## Solution
 
 ``` python
 class Solution:
@@ -50,6 +43,7 @@ class Solution:
 ```
 
 ## Solution: Recursive
+```python
 class Solution:
     
     def __init__(self):
@@ -80,3 +74,4 @@ class Solution:
         else:
           print("No Rooms to Enter")
           return False
+```
