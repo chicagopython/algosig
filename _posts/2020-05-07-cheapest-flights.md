@@ -6,7 +6,6 @@ author: Kevin Nasto
 gh_comments_issue_id: 39
 tags:
   - Graph
-  - unsolved
 ---
 
 ## Description
@@ -17,7 +16,7 @@ Now given all the cities and flights, together with starting city *src* and the 
 
 ```
 Example 1:
-Input: 
+Input:
 n = 3, edges = [[0,1,100],[1,2,100],[0,2,500]]
 src = 0, dst = 2, k = 1
 Output: 200
@@ -25,7 +24,7 @@ Output: 200
 
 ```
 Example 2:
-Input: 
+Input:
 n = 3, edges = [[0,1,100],[1,2,100],[0,2,500]]
 src = 0, dst = 2, k = 0
 Output: 500
@@ -57,14 +56,14 @@ def recurse(node_id, tree, k, dest, visited):
 
     if not children:
         return float('inf')
-    
+
     results = []
     for child in tree[node_id]:
         results.append(child['cost'] + recurse(child['id'], tree, k-1, dest, visited))
 
     visited[key] = min(results)
     return visited[key]
-    
+
 
 def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, K: int) -> int:
     tree = defaultdict(list)

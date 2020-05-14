@@ -7,7 +7,6 @@ author:
 tags:
   - Depth First Search
   - Graph
-  - unsolved
 participants: Adam Bain, Sree Prasad, Michael Shoemaker
 ---
 
@@ -37,37 +36,37 @@ class Solution:
             key_inventory |= keys  # add keys found in  room to inventory
             rooms_visited.add(chosen_room)  # room has been visited
             if key_inventory >= set(range(len(rooms))):  # Stop once we have a key for each room
-                return True 
-        
+                return True
+
         return False # We have no keys to rooms we have not seen, and we didnt have a key for each room
 ```
 
 ## Solution: Recursive
 ```python
 class Solution:
-    
+
     def __init__(self):
       self.visited = set()
       self.number_of_rooms = 0
-    
+
     def dfs(self, rms, rm):
         if rm not in self.visited:
             print(rm)
             self.visited.add(rm)
-            
+
             for room_key in rms[rm]:
               if room_key < self.number_of_rooms:
                 self.dfs(rms, room_key)
-    
+
     def canVisitAllRooms(self, rooms) -> bool:
-        
+
         if rooms:
           self.number_of_rooms = len(rooms)
           self.dfs(rooms, 0)
 
           if len(self.visited) != self.number_of_rooms:
             return False
-          
+
           else:
             return True
 

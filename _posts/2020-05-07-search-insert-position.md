@@ -5,7 +5,8 @@ link: https://leetcode.com/problems/search-insert-position/
 author:
 gh_comments_issue_id: 37
 tags:
-  - unsolved
+  - list
+  - search
 ---
 
 ## Description
@@ -27,20 +28,6 @@ nums   = [1,3,5,6]
 target = 2
 
 return 1
-```
-
-## Solution
-
-```python
-from typing import List
-
-def search_insert(nums:List[int], target:int) -> int:
-  # write solution here
-  return
-
-# tests
-assert search_insert([1,3,5,6], 5) == 2
-assert search_insert([1,3,5,6], 2) == 1
 ```
 
 ## Solution A
