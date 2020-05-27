@@ -16,7 +16,6 @@ In an array A containing only 0s and 1s, a K-bit flip consists of choosing a (co
 
 Return the minimum number of K-bit flips required so that there is no 0 in the array.  If it is not possible, return -1.
 
-Note:
 1 <= A.length <= 30000
 1 <= K <= A.length
 
