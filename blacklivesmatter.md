@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Annoucement from ChiPy Board
+title: Announcement from ChiPy Board
 permalink: /blacklivesmatter/
 ---
 
