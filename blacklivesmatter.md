@@ -1,10 +1,7 @@
 ---
-title: Event Canceled - Annoucement from the ChiPy Board
-category:
-link:
-author:
-gh_comments_issue_id:
-tags:
+layout: page
+title: Annoucement from ChiPy Board
+permalink: /blacklivesmatter/
 ---
 
 Dear ChiPy Community,
