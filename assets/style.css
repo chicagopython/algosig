@@ -69,6 +69,17 @@ h2 { font-size: 2.25rem; }
 h3 { font-size: 1.9rem; }
 h4 { font-size: 1.4rem; }
 
+/* Block Quotes */
+blockquote {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 0.15px solid #ccc;
+}
+
+blockquote p {
+    font-style: italic;
+}
+
 /** Site footer */
 footer {
     font-size: 0.95rem;
