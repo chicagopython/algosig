@@ -2,7 +2,7 @@
 title: Minimum Number of K Consecutive Bit Flips
 category: AlgoSIG 3
 link: https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/
-gh_comments_issue_id:
+gh_comments_issue_id: 51
 author:
 tags:
   - Greedy
