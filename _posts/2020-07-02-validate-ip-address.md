@@ -1,5 +1,5 @@
 ---
-title: Cheapest Flights With K Stops
+title: Validate IP Address
 category: AlgoSIG 2
 link: https://leetcode.com/problems/validate-ip-address/
 author: Kevin Nasto
