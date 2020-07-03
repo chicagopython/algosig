@@ -29,6 +29,45 @@ Explanation: This is neither a IPv4 address nor a IPv6 address.
 ## Solution
 
 ```python
-def valid_ip_address(IP):
-    pass
+def is_ipv4(address):
+    splitted = address.split('.')
+    if len(splitted) != 4:
+        return False
+    for part in splitted:
+        try:
+            num = int(part)
+        except:
+            return False
+        if num < 0:
+            return False
+        if num > 255:
+            return False
+        if str(num) != part: # str('01')
+            return False
+    return True
+
+
+def is_ipv6(address):
+    splitted = address.split(':')
+    if len(splitted) != 8:
+        return False
+    for part in splitted:
+        if len(part) > 4:
+            return False
+        try:
+            int(part, 16)
+        except:
+            return False
+    return True
+
+
+class Solution:
+    def validIPAddress(self, IP: str) -> str:
+        if is_ipv4(IP):
+            return 'IPv4'
+        elif is_ipv6(IP):
+            return 'IPv6'
+        else:
+            return 'Neither'
+        
 ```
