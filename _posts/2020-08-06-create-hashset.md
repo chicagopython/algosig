@@ -1,5 +1,5 @@
 ---
-title: Keys and Rooms
+title: Create a hashset
 category: AlgoSIG 2
 link: https://leetcode.com/problems/design-hashset/
 gh_comments_issue_id: 40
