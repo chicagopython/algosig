@@ -21,9 +21,9 @@ To be specific, your design should include these functions:
 3. remove(value): Remove a value in the HashSet. If the value does not exist in the HashSet, do nothing.
 
 Notes:
-+ add(value): Insert a value into the HashSet. 
-+ contains(value) : Return whether the value exists in the HashSet or not.
-+ remove(value): Remove a value in the HashSet. If the value does not exist in the HashSet, do nothing.
++ All values will be in the range of [0, 1000000].
++ The number of operations will be in the range of [1, 10000].
++ Please do not use the built-in HashSet library.
 
 ## Solution
 
