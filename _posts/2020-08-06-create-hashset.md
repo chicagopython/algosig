@@ -54,4 +54,60 @@ class MyHashSet:
 # obj.add(key)
 # obj.remove(key)
 # param_3 = obj.contains(key)
+
+class MyHashSet:
+
+    def __init__(self):
+      """
+      Initialize your data structure here.
+      """
+      self.capacity = 101
+      self.my_list = [None for i in range(self.capacity)]    
+      self.count = 0
+
+    def add(self, key: int):
+      index=self.my_hash(key)
+      if self.my_list[index] is None:
+        self.my_list[index] = [key]
+      elif key not in self.my_list[index]:
+            self.my_list[index].append(key)
+      self.count += 1  
+
+    def remove(self, key: int):
+      index=self.my_hash(key)
+      sub_list = self.my_list[index]
+      if key in sub_list:
+        sub_list.remove(key)
+        return True
+      else:
+        return False
+
+    def contains(self, key: int):
+      # """
+      # Returns true if this set contains the specified element
+      # """
+      index=self.my_hash(key)
+      sub_list = self.my_list[index]
+      if sub_list:        
+        return key in sub_list
+      else: 
+        return False        
+
+
+    def my_hash(self, key: int):
+      index = key % self.capacity
+      return index
+
+# Your MyHashSet object will be instantiated and called as such:
+obj2 = MyHashSet()
+obj2.add(1)
+print(obj2.my_list)
+obj2.remove(1)
+print(" ")
+print(obj2.my_list)
+
+obj2.add(3)
+print("contains 3:", obj2.contains(3))  # should be True
+print(" ") 
+print("contains 2:", obj2.contains(2))  # should be False
 ```
