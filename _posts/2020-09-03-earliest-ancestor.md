@@ -3,6 +3,10 @@ title: Earliest Ancestor in Family Tree
 category:
 author:
 gh_comments_issue_id: 62
+tags:
+  - unsolved
+  - graphs
+  - trees
 ---
 
 ## Problem
