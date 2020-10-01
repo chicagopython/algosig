@@ -19,7 +19,7 @@ mat = [
   [7, 8, 9]
 ]
 
-# Example Input
+# Example Output
 25
 
 # Explanation (note that 5 is not repeated)
