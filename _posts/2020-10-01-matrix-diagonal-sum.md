@@ -32,4 +32,7 @@ mat = [
 def diagonal_sum(mat):
 
   return
+
+# Tests
+assert diagonal_sum([[1,2,3],[4,5,6],[7,8,9]]) == 25
 ```
