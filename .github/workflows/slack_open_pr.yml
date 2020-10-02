@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+name: Notify Slack on Open PR
+jobs:
+  notify_slack:
+    name: Notify Slack on Open PR
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        run: >
+          curl
+          -X POST
+          -H 'Content-type: application/json'
+          --data '{"text": "<${{ github.event.pull_request.user.html_url }}|${{ github.event.pull_request.user.login }}> opened a Pull Request!\n\n<${{ github.event.pull_request.url }}|*${{ github.event.pull_request.title }}*>"}'
+          ${{ secrets.SLACK_WEBHOOK }}
