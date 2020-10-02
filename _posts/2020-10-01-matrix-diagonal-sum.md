@@ -29,13 +29,16 @@ mat = [
 ## Solution
 
 ```python
-def diagonal_sum(A):
-  N = len(A)
+def diagonal_sum(mat):
+  n = len(mat)
   res = 0
-  for i in range(N):
-      res += A[i][i] + A[i][N - 1 - i]
-  if N & 1:
-      res -= A[N // 2][N // 2]        
+
+  for i in range(n):
+    res += mat[i][i] + mat[i][n - 1 - i]
+
+  if n & 1:  # this "bitwise and" operation determines whether n is odd
+    res -= mat[n // 2][n // 2]        
+
   return res
 
 # Tests
