@@ -4,7 +4,7 @@ category:
 link: https://leetcode.com/problems/matrix-diagonal-sum/
 gh_comments_issue_id:
 tags:
-  - unsolved
+  - solved
 ---
 
 ## Problem
@@ -30,8 +30,16 @@ mat = [
 
 ```python
 def diagonal_sum(mat):
+  n = len(mat)
+  res = 0
 
-  return
+  for i in range(n):
+    res += mat[i][i] + mat[i][n - 1 - i]
+
+  if n & 1:  # this "bitwise and" operation determines whether n is odd
+    res -= mat[n // 2][n // 2]        
+
+  return res
 
 # Tests
 assert diagonal_sum([[1,2,3],[4,5,6],[7,8,9]]) == 25
