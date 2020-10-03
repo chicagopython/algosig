@@ -2,7 +2,7 @@
 title: Carpooling
 category: AlgoSIG 2
 link: https://leetcode.com/problems/car-pooling/
-author: Sand Ip, Emily Ekdahl
+author: Sand Ip, Yuliana Sari (SolutionOne), Emily Ekdahl (SolutionTwo)
 tags:
   - Greedy
 ---
@@ -44,7 +44,7 @@ Output: true
 Other solutions can be found on the problem source link at the top of the post.
 
 ```python
-class Solution:
+class SolutionOne:
     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
         pool = defaultdict(int)
         for val, start, end in trips:
@@ -57,8 +57,9 @@ class Solution:
             if current > capacity:
                 return False
         return True
-```
-```def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
+
+class SolutionTwo:
+   def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
       milesDict = {}
 
       for trip in trips:
