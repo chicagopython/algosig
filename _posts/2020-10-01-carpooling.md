@@ -46,4 +46,15 @@ Other solutions can be found on the problem source link at the top of the post.
 ```python
 class Solution:
     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
+        pool = defaultdict(int)
+        for val, start, end in trips:
+            pool[start] += val
+            pool[end] -= val
+        
+        current = 0
+        for location in sorted(pool.keys()):
+            current += pool[location]
+            if current > capacity:
+                return False
+        return True
 ```
