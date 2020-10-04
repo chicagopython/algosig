@@ -16,5 +16,5 @@ jobs:
           curl
           -X POST
           -H 'Content-type: application/json'
-          --data '{"text": "<${{ github.event.pull_request.user.html_url }}|${{ github.event.pull_request.user.login }}> opened a Pull Request!\n\n<${{ github.event.pull_request.url }}|*${{ github.event.pull_request.title }}*>"}'
+          --data '{"text": "<${{ github.event.pull_request.user.html_url }}|${{ github.event.pull_request.user.login }}> opened a Pull Request!\n\n<${{ github.event.pull_request.html_url }}|*${{ github.event.pull_request.title }}*>"}'
           ${{ secrets.SLACK_WEBHOOK }}
