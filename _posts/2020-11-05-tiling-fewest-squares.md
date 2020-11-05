@@ -3,6 +3,7 @@ title: Tiling a Rectangle with the Fewest Squares
 category:
 link: https://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares/
 author:
+gh_comments_issue_id: 74
 ---
 
 ## Description
