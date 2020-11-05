@@ -68,7 +68,9 @@ def bfs(source, target, is_blocked):
 
         node_id, depth = queue.pop(0)
         
-        if depth > 200:
+        # We only check a depth of 200 in breadth first search since
+        #  that's the max number of blocked squares
+        if depth > 200: 
             return True
 
         for child_id in get_children(node_id):
@@ -93,10 +95,12 @@ class Solution:
         for item in blocked:
             is_blocked.add(tuple(item))
             
-        target = tuple(target)
-        source = tuple(source)
+        target = tuple(target) # We check a depth of 200 from the start
+        source = tuple(source) #  And we check from the finish to cover all
         
         if bfs(source, target, is_blocked) and bfs(target,source,is_blocked):
             return True
         
-        return False```
+        return False
+        
+ ```
