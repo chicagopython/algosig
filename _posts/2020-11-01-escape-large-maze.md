@@ -8,7 +8,7 @@ gh_comments_issue_id: 61
 
 ## Description
 
-We start at the `source` (denoted as `S` below) square and want to reach the `target` square (denoted as `T`). Each move, we can walk to a 4-directionally adjacent square in the grid that isn't in the given list of `blocked` squares (denoted as `#`).
+We start at the `source` square (denoted as `S` below) and want to reach the `target` square (denoted as `T`). Each move, we can walk to a 4-directionally adjacent square in the grid that isn't in the given list of `blocked` squares (denoted as `#`).
 
 ```
 ############
@@ -34,7 +34,7 @@ target = [0,2]
 # Output is False
 ```
 
-## Solution by your_name_here
+## Solution
 
 ```python
 def get_children(point):
