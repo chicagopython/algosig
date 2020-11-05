@@ -3,6 +3,7 @@ title: First Bad Version
 category: AlgoSIG 1
 link: https://leetcode.com/problems/first-bad-version/
 author:
+gh_comments_issue_id: 73
 tags:
   - array
   - binary-search
