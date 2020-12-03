@@ -24,10 +24,10 @@ You are given an expense report by the Elves that looks like this
 ```
 
 
-****Part 1****
+#### Part 1
 You are told there is an error in the report and you need to **find the two entries** that sum to `2020`.
 
-****Part 2****
+#### Part 2
 The Elves are grateful but now they ask you to **find three entries** that sum to `2020`
 
 ## Solution your_name_here
