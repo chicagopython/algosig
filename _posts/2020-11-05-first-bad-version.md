@@ -25,8 +25,27 @@ call isBadVersion(4) -> true
 Then 4 is the first bad version.
 ```
 
-## Solution by your_name_here
+## Solution
+
+This is the binary search approach with is `O(log(n))` instead of `O(n)` 
 
 ```python
-# Insert solution here
+def helper(left, right):
+    mid = int((right+left)/2)
+    print(left, right, mid)
+    if right <= left:
+        return left
+    if isBadVersion(mid):
+        return helper(left, mid)
+    else:
+        return helper(mid+1, right)
+    
+    
+class Solution:
+    def firstBadVersion(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return helper(1,n)
 ```
