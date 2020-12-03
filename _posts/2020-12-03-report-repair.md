@@ -1,7 +1,7 @@
 ---
 title: Report Repair
 category: AlgoSIG 1
-link: https://adventofcode.com/2020/day/1/
+link: https://adventofcode.com/2020/day/1
 gh_comments_issue_id: 76
 author:
 tags:
