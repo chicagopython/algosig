@@ -2,7 +2,6 @@
 title: Toboggan Trajectory
 category: AlgoSIG 3
 link: https://adventofcode.com/2020/day/3/
-gh_comments_issue_id: 77
 author:
 tags:
   - Grid
