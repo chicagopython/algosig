@@ -72,10 +72,10 @@ Time to check the rest of the slopes - you need to minimize the probability of a
 Determine the number of trees you would encounter if, for each of the following slopes, 
 you start at the top-left corner and traverse the map all the way to the bottom:
 
-Right 1, down 1.
-Right 3, down 1. (This is the slope you already checked.)
-Right 5, down 1.
-Right 7, down 1.
+Right 1, down 1.\
+Right 3, down 1. (This is the slope you already checked.)\
+Right 5, down 1.\
+Right 7, down 1.\
 Right 1, down 2.
 
 
