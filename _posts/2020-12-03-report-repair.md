@@ -12,7 +12,7 @@ tags:
 
 ## Description
 
-You are given an expense report by the Elves that looks like this
+You are given an expense report by the Elves that looks similar to the following:
 
 ```
 1721
