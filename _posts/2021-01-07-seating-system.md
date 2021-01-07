@@ -10,13 +10,17 @@ tags:
 
 ## Description
 
-You are given a grid representing seats on an airplane. You are trying to model which seats will be occupied using the following rules.
+You are given a grid representing seats on an airplane. You are trying to model which seats will be occupied or empty.
+
+Each symbol represent an empty seat, occupied seat, or no seat which is the floor as shown below.
 
 ```
 Empty seat    (L)
 Occupied seat (#)
 No seat       (.)
 ```
+
+The grid looks like the following.
 
 ```
 #.LL.L#.##
@@ -31,14 +35,14 @@ L.L.L..L..
 #.#LLLL.##
 ```
 
-**All decisions are based on the number of occupied seats adjacent to a given seat (one of the eight positions immediately up, down, left, right, or diagonal from the seat). The following rules are applied to every seat simultaneously.**
+All decisions are based on the number of occupied seats adjacent to a given seat (one of the eight positions immediately up, down, left, right, or diagonal from the seat). The following rules are applied to every seat simultaneously.
 
 
 - If a seat is empty (L) and there are no occupied seats adjacent to it, the seat becomes occupied.
 - If a seat is occupied (#) and four or more seats adjacent to it are also occupied, the seat becomes empty.
 - Otherwise, the seat's state does not change
 
-Simulate your seating area by applying the seating rules repeatedly until no seats change state. How many seats end up occupied?
+Simulate your seating area by applying the seating rules repeatedly until no seats change state. How many seats end up occupied? (Answer in the above example is 37).
 
 
 ### Part 2
