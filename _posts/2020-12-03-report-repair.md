@@ -30,7 +30,7 @@ You are told there is an error in the report and you need to **find the two entr
 #### Part 2
 The Elves are grateful but now they ask you to **find three entries** that sum to `2020`. Then to submit the final answer to the website, you need to **multiply** the three entries together. 
 
-## Solution by your_name_here
+## Solution
 
 There are a few different solutions, each with different complexities.
 
