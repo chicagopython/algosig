@@ -35,5 +35,24 @@ The Elves are grateful but now they ask you to **find three entries** that sum t
 There are a few different solutions, each with different complexities.
 
 ```python
-# Insert solution here
+# Part 1 - O(n) complexity
+nums = set([int(x) for x in report.splitlines()])
+for num in nums:
+    if (2020-num) in nums:
+        print((2020-num)*num)
+
+# Part 2 - O(n^2) complexity
+for a in nums:
+    for b in nums:
+        if a != b:
+            c = 2020-b-a
+            if c in nums:
+                print(a*b*c)
+              
+# Part 2 - O(n^3) complexity  
+for a in nums:
+    for b in nums:
+        for c in nums:
+            if a+b+c == 2020:
+                print(a*b*c)
 ```
