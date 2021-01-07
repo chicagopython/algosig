@@ -63,7 +63,7 @@ Now, instead of considering just the eight immediately adjacent seats, consider 
 
 The following is the same grid as above except with the direction and first seat highlighted.
 
-| ![]({{ '/assets/img/seats.png' | relative_url }}) | I am text to the right |
+| ![]({{ '/assets/img/seats.png' | relative_url }}) |  |
 
 
 
