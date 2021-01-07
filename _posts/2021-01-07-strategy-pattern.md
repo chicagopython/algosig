@@ -35,7 +35,7 @@ class MoveBehaviorInterface(ABC):
         pass
 
 class Swim(MoveBehaviorInterface):
-    """This is a concrete class. It CAN be instantiated."""
+    """This is a 'concrete' class. It CAN be instantiated."""
     def move(self):
         return "splash splash"
 
