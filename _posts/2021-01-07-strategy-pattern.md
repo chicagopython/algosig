@@ -23,21 +23,21 @@ If we attempted to use inheritance alone, we would have to overwrite the `move()
 
 To solve this, we can define a `MoveBehaviorInterface` (a "strategy") with a `move()` method, and then subclass this to define various types of movement (like `Swim.move()` or `Fly.move()`). Finally, we can pass this behavior in when we instantiate an animal, e.g. `bird = Animal(move_behavior=Fly())`.
 
-Your task is to fill in the missing
+Your task is to fill in the missing pieces in the below code (where you see comments):
 
 ```python
 from abc import ABC, abstractmethod
 
 class MoveBehaviorInterface(ABC):
-    """This is an 'abstract' class. It CAN'T be instantiated."""
-    @abstractmethod
-    def move(self):
-        pass
+  """This is an 'abstract' class. It CAN'T be instantiated."""
+  @abstractmethod
+  def move(self):
+    pass
 
 class Swim(MoveBehaviorInterface):
-    """This is a 'concrete' class. It CAN be instantiated."""
-    def move(self):
-        return "splash splash"
+  """This is a 'concrete' class. It CAN be instantiated."""
+  def move(self):
+    return "splash splash"
 
 # Create a Fly class that inherits from MoveBehaviorInterface.
 # It should have a move() method that returns "flap flap"
@@ -52,18 +52,18 @@ class Swim(MoveBehaviorInterface):
 # It should have a call() method that returns "RooAAarr!"
 
 class Animal:
-    def __init__(
-        self,
-        move_behavior: MoveBehaviorInterface,
-        call_behavior: CallBehaviorInterface
-    ):
-        self.move_behavior = move_behavior
-        # store the call_behavior as an instance variable
+  def __init__(
+    self,
+    move_behavior: MoveBehaviorInterface,
+    call_behavior: CallBehaviorInterface
+  ):
+    self.move_behavior = move_behavior
+    # store the call_behavior as an instance variable
 
-    def move(self):
-        self.move_behavior.move()
+  def move(self):
+    return self.move_behavior.move()
 
-    # create a call() method that runs the call behavior
+  # create a call() method that runs the call behavior
 ```
 
 The completed code should be used like this:
@@ -90,5 +90,49 @@ assert dragon.call() == "RooAAarr!"
 ## Solution
 
 ```python
-# Insert solution here
+from abc import ABC, abstractmethod
+
+class MoveBehaviorInterface(ABC):
+  """This is an 'abstract' class. It CAN'T be instantiated."""
+  @abstractmethod
+  def move(self):
+    pass
+
+class CallBehaviorInterface(ABC):
+  """This is an 'abstract' class. It CAN'T be instantiated."""
+  @abstractmethod
+  def call(self):
+    pass
+
+class Swim(MoveBehaviorInterface):
+  """This is a 'concrete' class. It CAN be instantiated."""
+  def move(self):
+    return "splash splash"
+
+class Fly(MoveBehaviorInterface):
+  def move(self):
+    return "flap flap"
+
+class EchoLocate(CallBehaviorInterface):
+  def call(self):
+    return "click click"
+
+class Roar(CallBehaviorInterface):
+  def call(self):
+    return "RooAAarr!"
+
+class Animal:
+  def __init__(
+    self,
+    move_behavior: MoveBehaviorInterface,
+    call_behavior: CallBehaviorInterface
+  ):
+    self.move_behavior = move_behavior
+    self.call_behavior = call_behavior
+
+  def move(self):
+    return self.move_behavior.move()
+
+  def call(self):
+    return self.call_behavior.call()
 ```
