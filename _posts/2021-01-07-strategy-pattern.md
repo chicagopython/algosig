@@ -23,7 +23,7 @@ If we attempted to use inheritance alone, we would have to overwrite the `move()
 
 To solve this, we can define a `MoveBehaviorInterface` (a "strategy") with a `move()` method, and then subclass this to define various types of movement (like `Swim.move()` or `Fly.move()`). Finally, we can pass this behavior in when we instantiate an animal, e.g. `bird = Animal(move_behavior=Fly())`.
 
-Your task is to fill in the missing
+Your task is to fill in the missing pieces in the below code (where you see comments):
 
 ```python
 from abc import ABC, abstractmethod
