@@ -45,30 +45,68 @@ All decisions are based on the number of occupied seats adjacent to a given seat
 Simulate your seating area by applying the seating rules repeatedly until no seats change state. How many seats end up occupied? (Answer in the above example is 37).
 
 
-### Part 2
 
-Now, instead of considering just the eight immediately adjacent seats, consider the first seat in each of those eight directions. For example, the empty seat below would see eight occupied seats.
-
-```
-.......#.
-...#.....
-.#.......
-.........
-..#L....#
-....#....
-.........
-#........
-...#.....
-```
-
-The following is the same grid as above except with the direction and first seat highlighted.
-
-| ![]({{ '/assets/img/seats.png' | relative_url }}) |  |
-
-
-
-## Solution by your_name_here
+## Solution
 
 ```python
-# Insert solution here
+grid = []
+for line in grid_text.splitlines():
+    if not line:
+        continue
+    grid.append(list(line))
+
+
+def get_adj_seats(point):
+    occupied = 0
+    print(point)
+    (y,x) = point
+    for dy in (-1,0,1):
+        for dx in (-1,0,1):
+            if not dy and not dx: # Skip (0,0)
+                continue
+            y_adj = y + dy
+            x_adj = x + dx
+            if y_adj >= len(grid):
+                continue
+            if x_adj >= len(grid[0]):
+                continue
+            if y_adj < 0:
+                continue
+            if x_adj < 0:
+                continue
+            if grid[y_adj][x_adj] == '#':
+                occupied += 1
+    return occupied
+
+def next_state():
+    changes = {}
+    for y in range(len(grid)):
+        for x in range(len(grid[0])):
+            point = (y,x)
+            seat = grid[y][x]
+            num_occupied = get_adj_seats(point)
+            print(num_occupied)
+            if seat == 'L':
+                if num_occupied == 0:
+                    changes[point] = '#'
+            if seat == '#':
+                if num_occupied >= 4:
+                    changes[point] = 'L'
+    if not changes:
+        return False
+    for point in changes:
+        (y,x) = point
+        grid[y][x] = changes[point]
+    return True
+
+while next_state():
+    pass
+
+num_seats = 0
+for row in grid:
+    print(''.join(row))
+    for seat in row:
+        if seat == '#':
+            num_seats+=1
+print(num_seats)
 ```
