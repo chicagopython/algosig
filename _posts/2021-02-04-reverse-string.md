@@ -11,7 +11,9 @@ tags:
 
 Write a function that reverses a string. The input string is given as list of letters.
 
-Do not create a new list, you must do this by modifying the input list in-place with O(1) extra memory. Can you do it using a loop? Can you do it recursively?
+Do not create a new list, you must do this by modifying the input list in-place with O(1) extra memory. 
+
+Can you do it using a loop? Can you do it recursively?
 
 ```
 Input: ['H','e','l','l','o']
