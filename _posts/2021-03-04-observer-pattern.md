@@ -85,5 +85,33 @@ Display temperature set to 35
 
 ```python
 # Submit your solution here
+class WeatherStation:
+  def __init__(self):
+    self.displays = []
+    self.temperature = None
 
+  def add_display(self,display):  # incomplete args
+    self.displays.append(display)
+
+  def notify(self):
+    for display in self.displays:
+      display.update()
+
+  def set_temperature(self, temp):  # incomplete args
+    # Imagine that instead of the WeatherStation
+    # measuring the temperature, the user provides
+    # a temperature value to this method
+    self.temperature=temp
+    self.notify()
+
+  def get_temperature(self):
+    return self.temperature
+
+
+class Display:
+  def __init__(self, station):  # incomplete args
+    self.station=station
+
+  def update(self):
+    print('Display temperature set to ',self.station.get_temperature())
 ```
