@@ -101,8 +101,9 @@ class WeatherStation:
     # Imagine that instead of the WeatherStation
     # measuring the temperature, the user provides
     # a temperature value to this method
-    self.temperature=temp
-    self.notify()
+    if self.temperature is None or self.temperature!=temp:
+      self.temperature=temp
+      self.notify()
 
   def get_temperature(self):
     return self.temperature
