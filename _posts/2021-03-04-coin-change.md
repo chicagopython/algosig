@@ -42,7 +42,25 @@ Output: 2
 
 
 ```python
+from functools import lru_cache
+from typing import List
 class Solution:
-    def coinChange(self, coins: List[int], amount: int) -> int:
+    def coinChange(self,coins: List[int], amount: int) -> int:
+        
+        @lru_cache
+        def recurse(amount:int)->int:
+            ans=amount+1
+            if amount==0:
+                return 0
+            for c in coins:
+                if amount>=c:
+                    left=recurse(amount-c)
+                    if left!=-1:
+                        ans=min(ans,left+1)
+
+            if ans==amount+1: ans=-1
+            return ans
+
+        return recurse(amount)
 
 ```
