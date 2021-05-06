@@ -1,5 +1,5 @@
 ---
-title: Carpooling
+title: Linked List Cycle
 category: AlgoSIG 2
 link: https://leetcode.com/problems/linked-list-cycle/
 author:
