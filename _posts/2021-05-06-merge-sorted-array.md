@@ -1,5 +1,5 @@
 ---
-title: Merge Sorted Array
+title: Merge Two Sorted Arrays
 category: AlgoSIG 1
 link: https://leetcode.com/problems/merge-sorted-array/
 author:
