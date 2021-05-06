@@ -1,5 +1,5 @@
 ---
-title: Reverse String
+title: Reverse String In Place
 category: AlgoSIG 1
 link: https://leetcode.com/problems/reverse-string/
 gh_comments_issue_id: 85
@@ -21,9 +21,24 @@ Output: ['o','l','l','e','H']
 ```
 
 
-## Solution
+## Iterative Solution
 
 ```python
 # Insert solution here
+length = len(s)-1
 
+for i in range(0,length-1):
+  s[i], s[length-i] = s[length-i], s[i]
+```
+
+## Recursive Solution
+
+```python
+def helper(s, left_idx, right_idx):
+    if left_idx >= right_idx:
+        return
+    temp = s[left_idx]
+    s[left_idx] = s[right_idx]
+    s[right_idx] = temp
+    helper(s, left_idx + 1, right_idx - 1)
 ```
