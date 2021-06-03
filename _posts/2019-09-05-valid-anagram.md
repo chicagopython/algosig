@@ -9,21 +9,33 @@ tags:
 
 ## Description
 
-Given two strings *s* and *t* , write a function to determine if *t* is an anagram of *s*.
+Given two strings `s` and `t` , write a function to determine if `t` is an anagram of `s`. Assume each input string contains only lowercase letters.
 
-Example 1:
-```
-Input: *s* = “anagram”, *t* = “nagaram”
-Output = `True`
-```
+**Example 1**
 
-Example 2:
-```
-Input: *s* = “rat”, *t* = “car”
-Output = `False`
+Input:
+```python
+s = "anagram"
+t = "nagaram"
 ```
 
-Assume string contains only lowercase letters
+Output:
+```
+True
+```
+
+**Example 2**
+
+Input:
+```python
+s = "rat"
+t = "car"
+```
+
+Output:
+```
+False
+```
 
 ## Solution
 
