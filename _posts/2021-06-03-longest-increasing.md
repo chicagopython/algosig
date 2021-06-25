@@ -36,7 +36,7 @@ In the game of Solitaire you make piles of cards. To add a card to a pile, the r
 
 The total number of piles is the length of the longest increasing subsequence. It may not be intuitive but writing down a few examples, you can convince yourself this is true. 
 
-This is still `O(n^2)` time complexity because you have to through each pile every time to figure out where to put the new card.
+This is still `O(n^2)` time complexity because you have to go through each pile every time to figure out where to put the new card.
 
 ```python
 def insert_to_pile(num, piles):
