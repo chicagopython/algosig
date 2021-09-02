@@ -14,6 +14,8 @@ Given a 2D matrix `matrix`, handle multiple queries of the following type:
 
 Calculate the sum of the elements of matrix inside the rectangle defined by its **upper left corner** `(row1, col1)` and **lower right corner** `(row2, col2)`.
 
+![]({{ '/assets/img/sum-grid.jpg' | relative_url }})
+
 
 ## Solution
 
