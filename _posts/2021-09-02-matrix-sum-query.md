@@ -17,10 +17,23 @@ Calculate the sum of the elements of matrix inside the rectangle defined by its 
 ![]({{ '/assets/img/sum-grid.jpg' | relative_url }})
 
 
-## Solution
+## Solution (by @librohew)
 
 ```python
-def sumRegion(self, row1, col1, row2, col2) -> int:
+def sumRegion(row1, col1, row2, col2):
   # Insert code here
-  return 0
+  runerSum = 0
+  for x in range(row1, row2+1):
+    runerSum += addWithinRows(x, col1, row2, col2)
+    print('runerSum',runerSum)
+  return runerSum
+
+def addWithinRows(row1, col1, row2, col2):
+  # add matrix[row1][col1] and the next (col2 - row2)^{th} elts to the right
+  sumr = 0
+  # do col2 - row1 - 1 additions
+  for x in range(abs(col2 - col1) + 1):
+    print("row:" + str(row1) + "\n" + "col:" + str(col1 + x) +  "\nVAL:" +str(matrix[row1][col1 + x]))
+    sumr += matrix[row1][col1 + x]
+  return sumr
 ```
