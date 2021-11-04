@@ -1,5 +1,5 @@
 ---
-title: Course Schedule
+title: Merge Intervals
 category: AlgoSIG 2
 link: https://leetcode.com/problems/merge-intervals/
 author: 
