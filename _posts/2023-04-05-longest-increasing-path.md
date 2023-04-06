@@ -3,6 +3,7 @@ title: Longest Increasing Path in a Matrix
 category: AlgoSIG 3
 link: https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
 author:
+gh_comments_issue_id: 115
 tags: DFS, BFS, dynamic
 ---
 
