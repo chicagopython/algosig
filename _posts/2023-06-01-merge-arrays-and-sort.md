@@ -29,7 +29,7 @@ Output: [1]
 ```
 
 
-## Solution
+## Solution ##
 
 ```python
 def merge(nums1, m, nums2, n):
@@ -40,7 +40,7 @@ def merge(nums1, m, nums2, n):
 
   ```
   
- ## Part 2
+ ## Part 2 ##
  
  Now use the function above to write the sort.
  
