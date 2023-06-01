@@ -1,5 +1,6 @@
 ---
 title: Longest Common Prefix
+date: 2023-06-01 00:40:47
 link: https://leetcode.com/problems/longest-common-prefix/
 gh_comments_issue_id: 117
 tags: 
