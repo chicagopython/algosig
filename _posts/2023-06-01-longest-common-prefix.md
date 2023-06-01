@@ -3,7 +3,8 @@ title: Longest Common Prefix
 link: https://leetcode.com/problems/longest-common-prefix/
 date: 2023-06-01 14:40:47
 gh_comments_issue_id: 117
-tags: strings, arrays
+tags: 
+  - arrays, strings
 ---
 
 ## Description
